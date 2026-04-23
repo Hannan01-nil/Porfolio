@@ -1,0 +1,31 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="40" fill="#120B18"/>
+  <rect x="52" y="52" width="1496" height="796" rx="32" fill="url(#paint0_linear)"/>
+  <rect x="112" y="120" width="552" height="540" rx="28" fill="#1B1324" stroke="#C084FC" stroke-opacity="0.28"/>
+  <rect x="170" y="186" width="436" height="18" rx="9" fill="#E9D5FF" fill-opacity="0.92"/>
+  <rect x="170" y="228" width="294" height="14" rx="7" fill="#C4B5FD" fill-opacity="0.86"/>
+  <rect x="170" y="302" width="380" height="284" rx="24" fill="#241731"/>
+  <path d="M206 504L290 420L360 452L444 352L514 392" stroke="#C084FC" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="290" cy="420" r="14" fill="#F9A8D4"/>
+  <circle cx="360" cy="452" r="14" fill="#F9A8D4"/>
+  <circle cx="444" cy="352" r="14" fill="#F9A8D4"/>
+  <rect x="720" y="120" width="770" height="540" rx="28" fill="#1B1324" stroke="#F9A8D4" stroke-opacity="0.22"/>
+  <rect x="790" y="184" width="280" height="180" rx="22" fill="#241731"/>
+  <rect x="1120" y="184" width="300" height="180" rx="22" fill="#241731"/>
+  <rect x="790" y="412" width="630" height="182" rx="22" fill="#241731"/>
+  <rect x="838" y="238" width="184" height="22" rx="11" fill="#E9D5FF" fill-opacity="0.9"/>
+  <rect x="838" y="278" width="128" height="16" rx="8" fill="#C4B5FD" fill-opacity="0.85"/>
+  <rect x="1166" y="238" width="204" height="22" rx="11" fill="#FCE7F3" fill-opacity="0.9"/>
+  <rect x="1166" y="278" width="156" height="16" rx="8" fill="#F9A8D4" fill-opacity="0.85"/>
+  <rect x="838" y="466" width="216" height="18" rx="9" fill="#E9D5FF" fill-opacity="0.9"/>
+  <rect x="838" y="506" width="480" height="14" rx="7" fill="#C4B5FD" fill-opacity="0.82"/>
+  <rect x="838" y="544" width="430" height="14" rx="7" fill="#C4B5FD" fill-opacity="0.82"/>
+  <rect x="112" y="694" width="1378" height="96" rx="28" fill="#1B1324" stroke="#C084FC" stroke-opacity="0.2"/>
+  <text x="154" y="754" fill="#FAF5FF" font-family="Arial, sans-serif" font-size="48" font-weight="700">Student Stress Prediction System</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="140" y1="70" x2="1436" y2="838" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#241731"/>
+      <stop offset="1" stop-color="#120B18"/>
+    </linearGradient>
+  </defs>
+</svg>

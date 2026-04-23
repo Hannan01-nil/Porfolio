@@ -1,0 +1,41 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.hover {
+    transition: var(--transition-micro-medium);
+
+    &:hover {
+        transform: translateX(var(--static-space-4));
+    }
+}
+
+.profileAvatar {
+    position: relative;
+    width: clamp(10rem, 18vw, 13.75rem);
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transform: translateZ(0);
+}
+
+.profileAvatarImage {
+    object-fit: cover;
+    object-position: 18% 18%;
+    transform: scale(1.30);
+    transform-origin: center top;
+    image-rendering: auto;
+}
+
+@media (max-width: breakpoints.$s) {
+    .textAlign {
+        text-align: center;
+    }
+
+    .blockAlign {
+        align-self: center;
+    }
+
+    .profileAvatar {
+        width: clamp(9rem, 42vw, 11rem);
+    }
+}

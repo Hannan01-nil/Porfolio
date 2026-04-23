@@ -1,0 +1,130 @@
+:root {
+  /* Adjust multipliers if necessary */
+  --font-size-display-multiplier:   1;
+  --font-size-heading-multiplier:   1;
+  --font-size-body-multiplier:      1;
+  --font-size-label-multiplier:     1;
+
+  --default-border: var(--neutral-border-weak);
+
+  /* Custom Deep Navy/Black Background Colors */
+  --page-background: #030712; /* Deepest black-navy */
+  --surface-background: rgba(17, 24, 39, 0.6); /* Translucent navy for glass */
+  --brand-background-strong: #1d4ed8; 
+  --brand-alpha-weak: rgba(59, 130, 246, 0.1);
+  --brand-alpha-medium: rgba(59, 130, 246, 0.3);
+
+  --accent-background-strong: #0ea5e9;
+
+  /* Blue Glow Accents */
+  --brand-glow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--brand-glow);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.pill-nav {
+  background: rgba(15, 23, 42, 0.7) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Rotating Text Animation */
+.rotating-text-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1.5em; /* Adjust to match the line height */
+  vertical-align: bottom;
+}
+
+.rotating-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: rotateText 16s linear infinite;
+}
+
+@keyframes rotateText {
+  0%, 10% { transform: translateY(0%); opacity: 1; }
+  12.5%, 22.5% { transform: translateY(-100%); opacity: 1; }
+  25%, 35% { transform: translateY(-200%); opacity: 1; }
+  37.5%, 47.5% { transform: translateY(-300%); opacity: 1; }
+  50%, 60% { transform: translateY(-400%); opacity: 1; }
+  62.5%, 72.5% { transform: translateY(-500%); opacity: 1; }
+  75%, 85% { transform: translateY(-600%); opacity: 1; }
+  87.5%, 97.5% { transform: translateY(-700%); opacity: 1; }
+  100% { transform: translateY(0%); opacity: 1; }
+}
+
+/* Scroll Fade Animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Base text overrides */
+body {
+  color: #f3f4f6; /* White clear text */
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.about-timeline-item {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid rgba(59, 130, 246, 0.3);
+  margin-bottom: 24px;
+}
+.about-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.skill-bar-container {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.skill-bar-fill {
+  background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+  height: 100%;
+  border-radius: 999px;
+  box-shadow: 0 0 8px #0ea5e9;
+}
