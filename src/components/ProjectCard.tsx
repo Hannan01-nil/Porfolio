@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  AvatarGroup,
   Carousel,
   Column,
   Flex,
   Heading,
+  Icon,
   SmartLink,
   Text,
 } from "@once-ui-system/core";
@@ -17,8 +17,12 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
-  avatars: { src: string }[];
   link: string;
+  tag?: string;
+  extraLinks?: { label: string; link: string; icon?: string }[];
+  readMoreLink?: string;
+  reportLink?: string;
+  reportLabel?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -27,74 +31,131 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   content,
   description,
-  avatars,
   link,
   priority,
+  tag,
+  extraLinks,
+  readMoreLink,
+  reportLink,
+  reportLabel,
 }) => {
   return (
-    <Column fillWidth gap="m" className="glass-panel" style={{ padding: '24px', overflow: 'hidden' }}>
-      <Carousel
-        priority={priority}
-        radius="m"
-        aspectRatio="16 / 9"
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-        {...(images.length > 1 && {
-          indicator: "line",
-          controls: true,
-          play: {
-            auto: true,
-            interval: 2500,
+    <Column 
+      fillWidth 
+      gap="m" 
+      className="project-card-premium"
+    >
+      <div className="project-image-container">
+        <Carousel
+          priority={priority}
+          radius="l"
+          aspectRatio="16 / 9"
+          sizes="(max-width: 960px) 100vw, 960px"
+          items={images.map((image) => ({
+            slide: image,
+            alt: title,
+          }))}
+          {...(images.length > 1 && {
+            indicator: "line",
             controls: true,
-            progress: true,
-          },
-        })}
-      />
-      <Flex
-        s={{ direction: "column" }}
-        fillWidth
-        paddingTop="16"
-        gap="l"
-      >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            play: {
+              auto: true,
+              interval: 2500,
+              controls: true,
+              progress: true,
+            },
+          })}
+        />
+      </div>
+      <div className="project-card-content">
+        {tag && (
+          <div className={`project-badge ${tag === 'Group Project' ? 'badge-group' : 'badge-individual'}`}>
+            {tag}
+          </div>
+        )}
+
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {title && (
+            <Heading 
+              as="h2" 
+              wrap="balance" 
+              variant="heading-strong-xl" 
+              style={{ 
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
+                fontWeight: 700,
+                color: 'white'
+              }}
+            >
               {title}
             </Heading>
-          </Flex>
+          )}
+        </div>
+
+        {description?.trim() && (
+          <Text 
+            wrap="balance" 
+            variant="body-default-m" 
+            style={{ 
+              lineHeight: '1.8', 
+              color: 'rgba(255, 255, 255, 0.65)',
+              fontSize: '1rem',
+              width: '100%',
+              maxWidth: '100%'
+            }}
+          >
+            {description}
+          </Text>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap paddingTop="8">
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  href={href}
-                >
-                  <Text variant="heading-strong-xs" onBackground="brand-strong">Read Case Study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  href={link}
-                >
-                  <Text variant="heading-strong-xs" onBackground="neutral-strong">View Project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
-        )}
-      </Flex>
+
+        <div className="project-footer">
+          <SmartLink
+            href={readMoreLink || href}
+            className="project-pill-btn project-pill-btn-primary"
+            {...(readMoreLink && { target: "_blank", rel: "noopener noreferrer" })}
+          >
+            <Icon name="arrowRight" size="18" />
+            Read More
+          </SmartLink>
+
+          {link && (
+            <SmartLink
+              href={link}
+              className="project-pill-btn project-pill-btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name={link.includes('github') ? 'github' : 'arrowUpRightFromSquare'} size="18" />
+              View Project
+            </SmartLink>
+          )}
+
+          {reportLink && (
+            <SmartLink
+              href={reportLink}
+              className="project-pill-btn project-pill-btn-secondary report-btn pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="document" size="18" />
+              {reportLabel || "Project Report"}
+            </SmartLink>
+          )}
+
+          {extraLinks?.map((extra, idx) => (
+            <SmartLink
+              key={idx}
+              href={extra.link}
+              className="project-pill-btn project-pill-btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name={(extra.icon as any) || 'arrowUpRightFromSquare'} size="18" />
+              {extra.label}
+            </SmartLink>
+          ))}
+        </div>
+      </div>
     </Column>
   );
 };

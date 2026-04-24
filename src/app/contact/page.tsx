@@ -1,5 +1,5 @@
 import { Button, Column, Heading, Text, Meta, Schema, Row, Icon } from "@once-ui-system/core";
-import { baseURL, contact, person, social, locationLabel, phone, resume } from "@/resources";
+import { baseURL, contact, person, social, locationLabel, phone } from "@/resources";
 import React from "react";
 
 export async function generateMetadata() {
@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Contact() {
   return (
-    <Column maxWidth="s" fillWidth paddingY="64" gap="32" horizontal="center">
+    <Column maxWidth="m" fillWidth paddingY="80" gap="48" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,39 +28,36 @@ export default function Contact() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column className="glass-panel fade-in-section is-visible" fillWidth padding="48" horizontal="center" gap="32">
+      <Column className="magic-card fade-in-section is-visible" fillWidth padding="48" horizontal="center" gap="40">
         <Column horizontal="center" gap="16">
-            <Heading variant="display-strong-s" onBackground="brand-strong">{contact.label}</Heading>
+            <Heading variant="display-strong-s" onBackground="neutral-strong" style={{ letterSpacing: '-0.02em'}}>{contact.label}</Heading>
             <Text align="center" variant="heading-default-m" onBackground="neutral-weak">
                 {contact.description}
             </Text>
         </Column>
 
-        <Column gap="24" fillWidth padding="24" className="glass-panel" style={{ background: 'rgba(59,130,246,0.05)' }}>
+        <Column gap="24" fillWidth padding="32" className="magic-card" style={{ background: 'rgba(255,255,255,0.01)' }}>
             <Row vertical="center" gap="16">
-                <Icon name="email" size="m" onBackground="brand-strong"/>
+                <Icon name="email" size="m" onBackground="neutral-strong"/>
                 <Text variant="heading-strong-s">{person.email}</Text>
             </Row>
             <Row vertical="center" gap="16">
-                <Icon name="mobile" size="m" onBackground="brand-strong" />
+                <Icon name="mobile" size="m" onBackground="neutral-strong" />
                 <Text variant="heading-strong-s">{phone}</Text>
             </Row>
             <Row vertical="center" gap="16">
-                <Icon name="globe" size="m" onBackground="brand-strong"/>
+                <Icon name="globe" size="m" onBackground="neutral-strong"/>
                 <Text variant="heading-strong-s">{locationLabel}</Text>
             </Row>
         </Column>
 
         <Row gap="16" wrap horizontal="center">
-          <Button href={`mailto:${person.email}`} size="m" variant="primary" prefixIcon="email" weight="strong" style={{ background: 'var(--brand-background-strong)', color: '#fff' }}>
+          <Button href={`mailto:${person.email}`} size="l" variant="primary" prefixIcon="email" weight="strong" style={{ background: '#fff', color: '#000', boxShadow: '0 0 30px rgba(255,255,255,0.2)' }}>
             Email Me
-          </Button>
-          <Button href={resume.path} size="m" variant="secondary" prefixIcon="document">
-            Resume
           </Button>
         </Row>
 
-        <Row gap="16" wrap horizontal="center" paddingTop="16">
+        <Row gap="24" wrap horizontal="center" paddingTop="16">
            {social.map((item) => (
              <Button
                 key={item.name}
@@ -68,6 +65,7 @@ export default function Contact() {
                 size="l"
                 variant="tertiary"
                 prefixIcon={item.icon}
+                style={{ color: '#aaa' }}
              />
            ))}
         </Row>

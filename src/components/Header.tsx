@@ -56,7 +56,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
+      {/* Top Fade removed — was causing grey-line artefact during scroll */}
       <Fade
         hide
         s={{ hide: false }}
@@ -70,21 +70,26 @@ export const Header = () => {
       <Row
         fitHeight
         className={styles.position}
-        position="sticky"
+        position="fixed"
         as="header"
-        zIndex={9}
+        zIndex={99999}
         fillWidth
         padding="8"
-        horizontal="center"
-        data-border="rounded"
-        s={{
-          position: "fixed",
+        top="0"
+        style={{ 
+          display: 'grid',
+          gridTemplateColumns: '1fr auto 1fr',
+          alignItems: 'center',
+          width: '100%',
+          padding: '16px 24px',
+          transition: 'transform 0.3s ease'
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        <Row fillWidth vertical="center" textVariant="body-default-s" style={{ color: 'var(--text-secondary)' }}>
           {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
-        <Row fillWidth horizontal="center">
+
+        <Row horizontal="center">
           <Row
             className="pill-nav"
             radius="m-4"
@@ -194,12 +199,12 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
+
+        <Flex fillWidth horizontal="end" vertical="center" textVariant="body-default-s" style={{ color: 'var(--text-secondary)' }}>
           <Flex
             paddingRight="12"
             horizontal="end"
             vertical="center"
-            textVariant="body-default-s"
             gap="20"
           >
             <Flex s={{ hide: true }}>

@@ -8,21 +8,21 @@ const resume = {
   path: "/resume",
   label: "Resume",
   title: "Resume",
-  description: "Academic profile, technical skills, and project-focused experience.",
+  description: "Academic profile, skills, and project-focused experience. Download the latest PDF version of my resume.",
 };
 
 const contact = {
   path: "/contact",
-  label: "Contact Me",
+  label: "Contact",
   title: "Contact",
-  description: "Feel free to connect anytime.",
+  description: "Feel free to connect anytime. I am usually quick to respond.",
 };
 
 const person: Person = {
   firstName: "Mohamed",
   lastName: "Hannan N",
   name: "Mohamed Hannan N",
-  role: "BCA Student @ VIT | Full Stack Developer | Machine Learning Enthusiast",
+  role: "Full Stack Developer",
   avatar: "/images/hannan.jpg",
   email: "mohamedhannan01@gmail.com",
   location: "Asia/Kolkata",
@@ -66,8 +66,8 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: "Mohamed Hannan N | Full Stack Developer",
-  description: "Motivated BCA student passionate about technology, modern development, AI tools, and building useful real-world solutions.",
+  title: "Mohamed Hannan N | Software Portfolio",
+  description: "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
   headline: <>Mohamed Hannan N</>,
   featured: {
     display: true,
@@ -76,33 +76,32 @@ const home: Home = {
   },
   subline: (
     <>
-      Motivated BCA student passionate about technology, modern development, AI tools, and building useful real-world solutions.
+      Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.
     </>
   ),
 };
 
 const homeRotatingSubtitles = [
-  "BCA Student @ VIT",
   "Full Stack Developer",
   "Web Developer",
   "Software Developer",
-  "Machine Learning Enthusiast",
-  "AI/ML Explorer",
-  "Backend Learner",
-  "Future Engineer"
+  "AI/ML Engineer",
+  "Problem Solver",
+  "Tech Enthusiast"
 ];
 
 const homeBadges = [
+  "Based in Vaniyambadi",
   "Open to Opportunities",
-  "Based in Tamil Nadu",
-  "Passionate Learner"
+  "Fast Learner",
+  "Creative Thinker"
 ];
 
 const about: About = {
   path: "/about",
-  label: "About Me",
+  label: "About",
   title: "About",
-  description: "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, and machine learning.",
+  description: "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools.",
   tableOfContent: {
     display: false,
     subItems: false,
@@ -120,7 +119,7 @@ const about: About = {
     description: (
       <>
         <Text as="p" variant="body-default-l" marginBottom="16">
-          I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, and machine learning. I enjoy learning modern tools, building useful applications, and improving my technical skills through practical work.
+          I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools. I enjoy learning fast, building useful projects, and continuously improving my technical skills.
         </Text>
       </>
     ),
@@ -136,7 +135,7 @@ const about: About = {
     institutions: [
       {
         name: "Vellore Institute of Technology (VIT)",
-        description: <>Bachelor of Computer Applications (AI & ML) <br/> 2024 - 2027 <br/> CGPA: 8.91</>,
+        description: <>Bachelor of Computer Applications (BCA) <br/> 2024 - 2027 <br/> CGPA: 8.91</>,
       },
       {
         name: "Islamiah Boys Higher Secondary School",
@@ -150,29 +149,36 @@ const about: About = {
     skills: [
       {
         title: "Programming",
-        description: <>Python, Java, C++, JavaScript</>,
-        tags: [{ name: "Python" }, { name: "Java" }, { name: "C++" }, { name: "JavaScript", icon: "javascript" }],
+        description: <>Python, Java, C, C++, JavaScript, PHP</>,
+        tags: [
+          { name: "Python" }, 
+          { name: "Java" }, 
+          { name: "C" }, 
+          { name: "C++" }, 
+          { name: "JavaScript", icon: "javascript" },
+          { name: "PHP" }
+        ],
       },
       {
         title: "Frontend",
-        description: <>HTML, CSS, React.js, Next.js, Tailwind CSS</>,
+        description: <>HTML, CSS, React.js, Next.js, Tailwind</>,
         tags: [
           { name: "HTML" },
           { name: "CSS" },
           { name: "React.js" },
           { name: "Next.js", icon: "nextjs" },
-          { name: "Tailwind CSS" },
+          { name: "Tailwind" },
         ],
       },
       {
         title: "Backend",
-        description: <>Node.js, Express.js, Flask, REST APIs</>,
-        tags: [{ name: "Node.js" }, { name: "Express.js" }, { name: "Flask"}, {name: "REST APIs"}],
+        description: <>Node.js, Express.js, Flask</>,
+        tags: [{ name: "Node.js" }, { name: "Express.js" }, { name: "Flask"}],
       },
       {
         title: "Database",
-        description: <>MySQL, MongoDB, DBMS, SQL</>,
-        tags: [{ name: "MySQL" }, { name: "MongoDB" }, { name: "DBMS" }, {name: "SQL"}],
+        description: <>MySQL, MongoDB, SQL, DBMS</>,
+        tags: [{ name: "MySQL" }, { name: "MongoDB" }, { name: "SQL" }, {name: "DBMS"}],
       },
       {
         title: "Machine Learning",
@@ -187,13 +193,26 @@ const about: About = {
       },
       {
         title: "Tools",
-        description: <>Git, GitHub, VS Code, Postman, Colab</>,
+        description: <>Git, GitHub, VS Code, Postman, Colab, Canva, Figma</>,
         tags: [
           { name: "Git" },
           { name: "GitHub", icon: "github" },
           { name: "VS Code" },
           { name: "Postman" },
-          { name: "Colab" }
+          { name: "Colab" },
+          { name: "Canva" },
+          { name: "Figma" },
+          { name: "Antigravity" },
+        ],
+      },
+      {
+        title: "Concepts",
+        description: <>OOP, DSA, REST APIs, Problem Solving</>,
+        tags: [
+          { name: "OOP" },
+          { name: "DSA" },
+          { name: "REST APIs" },
+          { name: "Problem Solving" }
         ],
       },
     ],
@@ -201,14 +220,14 @@ const about: About = {
 };
 
 const aboutTimeline = [
-  { year: "2024", text: "Started BCA journey at VIT and entered the world of programming." },
-  { year: "2025", text: "Built TrackMyTrain project using Python, MySQL and DBMS concepts." },
-  { year: "2025", text: "Strengthened coding fundamentals, databases, and web development skills." },
-  { year: "2025 - 2026", text: "Completed HCI full case study project with low-fidelity and high-fidelity wireframes, focusing on user-centered design and usability." },
-  { year: "2026", text: "Developed Student Stress Prediction (Streeiq) using Machine Learning concepts." },
-  { year: "2026", text: "Built AI-Based Smart Attendance System using IoT technologies." },
-  { year: "NOW", text: "Exploring AI & ML technologies, improving development skills, and learning modern tools." },
-  { year: "FUTURE", text: "Working towards becoming a skilled Software / AI / ML Engineer and building impactful real-world solutions." }
+  { year: "2024", text: "Started BCA journey at VIT" },
+  { year: "2025", text: "Built Track My Train project" },
+  { year: "2025", text: "Strengthened coding, DBMS and development skills" },
+  { year: "2025-2026", text: "Completed HCI full case study with low/high fidelity wireframes" },
+  { year: "2026", text: "Built Stress Prediction (Streeiq) project" },
+  { year: "2026", text: "Built Smart Attendance System IoT project" },
+  { year: "NOW", text: "Exploring AI/ML, modern development, advanced tools" },
+  { year: "FUTURE", text: "Becoming a skilled Software / AI / ML engineer and building impactful products" }
 ];
 
 const aboutCreative = [
@@ -219,24 +238,10 @@ const aboutCreative = [
   "Content Creation"
 ];
 
-const aboutLearning = [
-  "Full Stack Development",
-  "Machine Learning Basics to Advanced",
-  "Clean UI/UX",
-  "Deployment",
-  "AI Productivity Tools"
-];
-
-const aboutTools = [
-  "VS Code",
-  "GitHub",
-  "Chrome",
-  "Postman",
-  "MongoDB Compass",
-  "Colab",
-  "Canva",
-  "Figma"
-];
+// Empty learning/tools because it's merged or unnecessary based on latest requirements 
+// but we keep exports to prevent TS errors in unmodified downstream pages, just in case.
+const aboutLearning: string[] = []; 
+const aboutTools: string[] = [];
 
 const blog: Blog = {
   path: "/blog",
@@ -249,14 +254,14 @@ const work: Work = {
   path: "/work",
   label: "Projects",
   title: "Projects",
-  description: "Selected software and machine learning projects by Mohamed Hannan.",
+  description: "Selected software and machine learning projects.",
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: "Gallery",
-  description: "Gallery of Mohamed Hannan.",
+  description: "Gallery.",
   images: [],
 };
 

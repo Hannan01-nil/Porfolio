@@ -24,20 +24,74 @@ export function Projects({ range, exclude }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
-      {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`/work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
-        />
-      ))}
-    </Column>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+        gap: '40px',
+        width: '100%',
+        marginBottom: '80px',
+        padding: '0 24px',
+        justifyItems: 'center'
+      }}
+    >
+      {displayedProjects.map((post, index) => {
+        const isTrackMyTrain = post.metadata.title === "Track My Train";
+        const card = (
+          <ProjectCard
+            priority={index < 2}
+            key={post.slug}
+            href={`/work/${post.slug}`}
+            images={post.metadata.images}
+            title={post.metadata.title}
+            description={post.metadata.summary}
+            content={post.content}
+            link={post.metadata.link || ""}
+            tag={post.metadata.tag}
+            extraLinks={post.metadata.extraLinks}
+            readMoreLink={post.metadata.readMoreLink}
+            reportLink={
+              post.metadata.title === "AI-Based Smart Attendance System - IoT" 
+                ? "/images/Attendance_System_IoT/AI_Smart_Attendance_System_Report.pdf"
+                : post.metadata.title === "Student Stress Prediction System - Stressiq"
+                ? "/images/Stress_Prediction/stressiq-report.pdf"
+                : post.metadata.title === "HCI Case Study Project - Where Is My Train"
+                ? "/images/HCI/HCI_CaseStudy-1.pdf"
+                : undefined
+            }
+            reportLabel={
+              post.metadata.title === "HCI Case Study Project - Where Is My Train"
+                ? "Case Study Report"
+                : "Project Report"
+            }
+          />
+        );
+
+        if (isTrackMyTrain) {
+          return (
+            <div
+              key={post.slug}
+              style={{
+                gridColumn: "1 / -1",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%"
+              }}
+            >
+              <div style={{ width: '100%', maxWidth: '560px', display: 'flex', justifyContent: 'center' }}>
+                {card}
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <div key={post.slug} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            {card}
+          </div>
+        );
+      })}
+    </div>
   );
 }

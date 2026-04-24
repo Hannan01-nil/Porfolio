@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Resume() {
   return (
-    <Column maxWidth="m" fillWidth paddingY="32" gap="32" horizontal="center">
+    <Column maxWidth="l" fillWidth paddingY="32" gap="48" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,25 +28,25 @@ export default function Resume() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column className="glass-panel fade-in-section is-visible" fillWidth padding="48" horizontal="center" gap="24">
-        <Column horizontal="center" gap="m">
-            <Heading variant="display-strong-xs" onBackground="brand-strong">{resume.title}</Heading>
+      <Column className="fade-in-section is-visible" fillWidth padding="24" horizontal="center" gap="32">
+        <Column horizontal="center" gap="l">
+            <Heading variant="display-strong-xs" onBackground="neutral-strong">{resume.title}</Heading>
             <Text align="center" variant="heading-default-m" onBackground="neutral-weak">
                 {resume.description}
             </Text>
         </Column>
 
-        <Row gap="16" wrap horizontal="center">
-          <Button href="/resume.pdf" size="m" variant="primary" prefixIcon="download" weight="strong" style={{ background: 'var(--brand-background-strong)', color: '#fff' }}>
+        <Row gap="24" wrap horizontal="center">
+          <Button href="/resume.pdf" size="l" variant="primary" prefixIcon="download" weight="strong" style={{ background: '#fff', color: '#000', boxShadow: '0 0 30px rgba(255,255,255,0.2)' }}>
             Download Resume
           </Button>
-          <Button href="/resume.pdf" target="_blank" size="m" variant="secondary" prefixIcon="arrowUpRightFromSquare">
-            Open Full Resume
+          <Button href="/resume.pdf" target="_blank" size="l" variant="secondary" prefixIcon="arrowUpRightFromSquare">
+            Open Resume
           </Button>
         </Row>
       </Column>
 
-      <Column className="glass-panel fade-in-section is-visible" fillWidth style={{ height: '800px', overflow: 'hidden' }}>
+      <Column className="magic-card fade-in-section is-visible" fillWidth style={{ height: '800px', overflow: 'hidden' }}>
         <iframe
           src="/resume.pdf#toolbar=0"
           width="100%"
