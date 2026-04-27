@@ -430,15 +430,18 @@ html {
 
 /* Year & Highlights */
 .journey-card-year {
-    font-size: 0.75rem;
+    font-size: 14px;
+    font-weight: 800;
     color: #22d3ee;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    margin-bottom: 12px;
+    letter-spacing: 0.28em;
+    margin: 0;
+    line-height: 1;
 }
 
 .card-now { border-color: rgba(34, 211, 238, 0.6) !important; background: rgba(34, 211, 238, 0.03); }
 .card-future { border-color: rgba(234, 179, 8, 0.6) !important; background: rgba(234, 179, 8, 0.03); }
+.card-now .journey-card-year { color: #3b82f6; }
 .card-future .journey-card-year { color: #eab308; }
 
 .journey-card-title {
@@ -915,44 +918,53 @@ html {
 }
 
 .hero-nav-btn {
-    background: rgba(10, 10, 20, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    border-radius: 9999px;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: white !important;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    cursor: pointer;
+    background: rgba(15, 15, 25, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(192, 132, 252, 0.25) !important;
+    border-radius: 999px !important;
+    padding: 14px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    color: #f3f0ff !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    cursor: pointer !important;
     text-decoration: none !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(192, 132, 252, 0.05) !important;
+    width: 100% !important;
     position: relative;
     overflow: hidden;
-    width: 100%;
 }
 
 .hero-nav-btn:hover {
-    transform: translateY(-5px) scale(1.03);
-    background: rgba(15, 15, 25, 0.85);
-    border-color: rgba(34, 211, 238, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(34, 211, 238, 0.2);
+    transform: translateY(-2px) scale(1.02) !important;
+    background: linear-gradient(135deg, #c084fc 0%, #f3e8ff 50%, #22d3ee 100%) !important;
+    color: #030303 !important;
+    border-color: transparent !important;
+    box-shadow: 0 12px 30px rgba(192, 132, 252, 0.4), 0 0 20px rgba(34, 211, 238, 0.3) !important;
+}
+
+.hero-nav-btn:active,
+.hero-nav-btn.active {
+    background: linear-gradient(135deg, #c084fc 0%, #f3e8ff 50%, #22d3ee 100%) !important;
+    color: #030303 !important;
+    box-shadow: 0 8px 25px rgba(192, 132, 252, 0.5) !important;
 }
 
 .hero-nav-icon {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease;
-    opacity: 0.8;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
 .hero-nav-btn:hover .hero-nav-icon {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
+    filter: brightness(0) !important;
 }
 
 @media (max-width: 1200px) {
@@ -1038,6 +1050,9 @@ html {
         0 0 30px rgba(140, 80, 255, 0.05) !important;
     overflow: hidden;
     position: relative;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .project-card-premium:hover {
@@ -1080,11 +1095,13 @@ html {
     gap: 18px !important;
     min-height: 420px !important;
     background: transparent !important;
+    flex: 1 !important;
 }
 
 /* Project Actions Footer */
 .project-footer {
     display: flex !important;
+    flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 12px !important;
@@ -1095,10 +1112,11 @@ html {
 }
 
 .project-footer .project-pill-btn {
-    flex: 1 !important;
-    min-width: 140px !important;
+    flex: 1 1 calc(50% - 12px) !important;
+    min-width: fit-content !important;
     justify-content: center !important;
-    min-height: 46px !important;
+    min-height: 52px !important;
+    white-space: nowrap !important;
 }
 
 @media (max-width: 640px) {
@@ -1106,10 +1124,8 @@ html {
         flex-direction: column !important;
     }
     .project-footer .project-pill-btn {
-        max-width: 100% !important;
-    }
-    .project-card-premium {
-        min-width: 100% !important;
+        width: 100% !important;
+        flex: 1 0 100% !important;
     }
 }
 
@@ -1117,7 +1133,7 @@ html {
     width: 100% !important;
     flex: 1 0 100% !important;
     justify-content: center !important;
-    gap: 10px !important;
+    min-height: 52px !important;
 }
 
 .report-btn svg {
@@ -1129,11 +1145,11 @@ html {
 }
 
 .project-pill-btn {
-    width: 100% !important;
+    width: auto !important;
     justify-content: center !important;
     height: 52px !important;
     white-space: nowrap !important;
-    padding: 0 22px !important;
+    padding: 0 24px !important;
     border-radius: 16px !important;
     font-size: 1rem !important;
     font-weight: 600 !important;
@@ -1216,4 +1232,83 @@ html {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Floating Avatar Animation */
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+/* Social Icon Button Glow */
+.social-glow-btn:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  border-color: rgba(168, 85, 247, 0.6) !important;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), inset 0 0 10px rgba(168, 85, 247, 0.2) !important;
+  background: rgba(168, 85, 247, 0.05) !important;
+}
+
+/* ====================================================
+   RESUME PAGE HERO PREMIUM BUTTONS
+   ==================================================== */
+
+.resume-btn-download {
+    background: linear-gradient(135deg, #c084fc 0%, #f3e8ff 50%, #22d3ee 100%) !important;
+    color: #030303 !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 4px 20px rgba(192, 132, 252, 0.3), 0 0 15px rgba(34, 211, 238, 0.2) !important;
+    height: 52px !important;
+    padding: 0 32px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    border: none !important;
+    width: auto !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
+.resume-btn-download:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(192, 132, 252, 0.45), 0 0 25px rgba(34, 211, 238, 0.35) !important;
+    filter: brightness(1.05) !important;
+}
+
+.resume-btn-open {
+    background: rgba(15, 15, 25, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(192, 132, 252, 0.25) !important;
+    color: #f3f0ff !important;
+    border-radius: 9999px !important;
+    height: 52px !important;
+    padding: 0 32px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: auto !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
+.resume-btn-open:hover {
+    background: rgba(192, 132, 252, 0.08) !important;
+    border-color: #22d3ee !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 0 25px rgba(192, 132, 252, 0.2), inset 0 0 15px rgba(34, 211, 238, 0.1) !important;
+}
+
+.resume-hero-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

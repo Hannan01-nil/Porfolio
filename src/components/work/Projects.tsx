@@ -26,18 +26,25 @@ export function Projects({ range, exclude }: ProjectsProps) {
   return (
     <div
       style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
         gap: '40px',
         width: '100%',
         marginBottom: '80px',
         padding: '0 24px',
-        justifyItems: 'center'
       }}
     >
-      {displayedProjects.map((post, index) => {
-        const isTrackMyTrain = post.metadata.title === "Track My Train";
-        const card = (
+      {displayedProjects.map((post, index) => (
+        <div 
+          key={post.slug} 
+          style={{ 
+            width: '100%', 
+            maxWidth: '560px', 
+            display: 'flex', 
+            justifyContent: 'center' 
+          }}
+        >
           <ProjectCard
             priority={index < 2}
             key={post.slug}
@@ -65,33 +72,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
                 : "Project Report"
             }
           />
-        );
-
-        if (isTrackMyTrain) {
-          return (
-            <div
-              key={post.slug}
-              style={{
-                gridColumn: "1 / -1",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%"
-              }}
-            >
-              <div style={{ width: '100%', maxWidth: '560px', display: 'flex', justifyContent: 'center' }}>
-                {card}
-              </div>
-            </div>
-          );
-        }
-
-        return (
-          <div key={post.slug} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            {card}
-          </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

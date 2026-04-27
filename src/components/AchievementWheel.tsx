@@ -161,9 +161,17 @@ export const AchievementWheel = () => {
                                   viewport={{ once: true, margin: "-100px" }}
                                   transition={{ duration: 0.6 }}
                               >
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                                      <span style={{ fontSize: '1.4rem' }}>{ms.emoji}</span>
-                                      <span className="journey-card-year">{ms.year}</span>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
+                                      <span style={{ fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'translateY(-1px)' }}>{ms.emoji}</span>
+                                      <span className="journey-card-year" style={{ 
+                                          fontSize: '14px', 
+                                          fontWeight: 800, 
+                                          letterSpacing: '0.28em', 
+                                          textTransform: 'uppercase', 
+                                          lineHeight: 1, 
+                                          margin: 0,
+                                          color: ms.status === 'now' ? '#3b82f6' : (ms.status === 'future' ? '#eab308' : '#22d3ee')
+                                      }}>{ms.year}</span>
                                   </div>
                                   <h3 className="journey-card-title">{ms.title}</h3>
                                   <p className="journey-card-desc">{ms.desc}</p>

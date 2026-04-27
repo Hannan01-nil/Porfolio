@@ -106,8 +106,7 @@ export default function About() {
                   alignItems: 'center', 
                   justifyContent: 'center',
                   boxShadow: 'var(--card-shadow)',
-                  border: '1px solid var(--magic-border)',
-                  animation: 'floatAvatar 6s ease-in-out infinite'
+                  border: '1px solid var(--magic-border)'
                 }}>
                 <div style={{ width: 304, height: 304, borderRadius: '50%', overflow: 'hidden', position: 'relative', border: '5px solid var(--page-background)' }}>
                    <Image 

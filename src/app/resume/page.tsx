@@ -1,4 +1,4 @@
-import { Button, Column, Heading, Text, Meta, Schema, Row } from "@once-ui-system/core";
+import { Column, Heading, Text, Meta, Schema, Row, RevealFx, Icon } from "@once-ui-system/core";
 import { baseURL, resume, person } from "@/resources";
 import React from "react";
 
@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Resume() {
   return (
-    <Column maxWidth="l" fillWidth paddingY="32" gap="48" horizontal="center">
+    <Column maxWidth="l" fillWidth paddingY="48" gap="48" horizontal="center" style={{ position: 'relative' }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,32 +28,86 @@ export default function Resume() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column className="fade-in-section is-visible" fillWidth padding="24" horizontal="center" gap="32">
-        <Column horizontal="center" gap="l">
-            <Heading variant="display-strong-xs" onBackground="neutral-strong">{resume.title}</Heading>
-            <Text align="center" variant="heading-default-m" onBackground="neutral-weak">
-                {resume.description}
+
+      {/* SUBTLE GLOW BEHIND HERO */}
+      <div style={{ 
+        position: 'absolute', 
+        top: '100px', 
+        left: '50%', 
+        transform: 'translateX(-50%)', 
+        width: '300px', 
+        height: '200px', 
+        background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%)', 
+        filter: 'blur(40px)', 
+        zIndex: 0,
+        pointerEvents: 'none'
+      }} />
+
+      {/* TOP SECTION: RESTORED ORIGINAL CENTERED LAYOUT */}
+      <Column 
+        fillWidth 
+        paddingX="24" 
+        horizontal="center" 
+        gap="40" 
+        style={{ 
+          position: 'relative', 
+          zIndex: 1,
+          paddingTop: '64px',
+          paddingBottom: '40px'
+        }}
+      >
+        <Column horizontal="center" gap="16" style={{ textAlign: 'center' }}>
+          <RevealFx translateY="12" delay={0.05} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <Heading 
+              variant="display-strong-xs" 
+              className="text-magic-shimmer"
+              style={{ 
+                letterSpacing: '-0.03em', 
+                textAlign: 'center', 
+                margin: 0,
+                fontSize: 'clamp(64px, 10vw, 88px)',
+                fontWeight: 900,
+                lineHeight: '1',
+              }}
+            >
+              Resume
+            </Heading>
+          </RevealFx>
+          <RevealFx translateY="8" delay={0.12} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <Text 
+              variant="heading-default-m" 
+              style={{ 
+                color: 'var(--text-secondary)', 
+                opacity: 0.7, 
+                maxWidth: '600px',
+                textAlign: 'center'
+              }}
+            >
+              Academic profile, technical skills, projects, and career-ready experience.
             </Text>
+          </RevealFx>
         </Column>
 
-        <Row gap="24" wrap horizontal="center">
-          <Button href="/resume.pdf" size="l" variant="primary" prefixIcon="download" weight="strong" style={{ background: '#fff', color: '#000', boxShadow: '0 0 30px rgba(255,255,255,0.2)' }}>
-            Download Resume
-          </Button>
-          <Button href="/resume.pdf" target="_blank" size="l" variant="secondary" prefixIcon="arrowUpRightFromSquare">
-            Open Resume
-          </Button>
-        </Row>
-      </Column>
-
-      <Column className="magic-card fade-in-section is-visible" fillWidth style={{ height: '800px', overflow: 'hidden' }}>
-        <iframe
-          src="/resume.pdf#toolbar=0"
-          width="100%"
-          height="100%"
-          style={{ border: 'none', borderRadius: '16px' }}
-          title="Resume Preview"
-        />
+        <RevealFx translateY="8" delay={0.18} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <Row gap="20" wrap horizontal="center" vertical="center">
+            <a 
+              href="/resume.pdf" 
+              download="Mohamed_Hannan_Resume.pdf"
+              className="resume-btn-download"
+            >
+              <Icon name="download" size="16" />
+              Download Resume
+            </a>
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              className="resume-btn-open"
+            >
+              <Icon name="arrowUpRight" size="16" />
+              Open Resume
+            </a>
+          </Row>
+        </RevealFx>
       </Column>
     </Column>
   );

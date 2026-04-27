@@ -92,7 +92,7 @@ export default function Home() {
          </RevealFx>
 
          <RevealFx translateY="12" delay={0.2} horizontal="center">
-            <Heading className="text-magic-shimmer" wrap="balance" align="center" variant="display-strong-xs" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.02em', marginTop: '24px', lineHeight: 1.1, paddingBottom: '0.1em' }}>
+            <Heading className="text-magic-shimmer" wrap="balance" align="center" variant="display-strong-xs" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.02em', fontWeight: 900, marginTop: '24px', lineHeight: 1.1, paddingBottom: '0.1em' }}>
               Mohamed Hannan N
             </Heading>
          </RevealFx>
