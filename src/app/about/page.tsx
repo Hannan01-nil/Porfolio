@@ -86,7 +86,7 @@ export default function About() {
         <Row 
           fillWidth 
           maxWidth="xl" 
-          horizontal="space-between" 
+          horizontal="between" 
           vertical="center" 
           gap="48" 
           wrap={false}
