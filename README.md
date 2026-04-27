@@ -15,6 +15,9 @@
   **A high-performance, futuristic digital ecosystem built with the latest web technologies.**  
   *Explore the intersection of design, engineering, and artificial intelligence.*
 
+  ![Portfolio Preview](.
+  /public/images/og/home.jpg)
+
 </div>
 
 ## 🌌 Overview
