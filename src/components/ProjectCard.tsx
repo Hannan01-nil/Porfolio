@@ -149,25 +149,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </SmartLink>
           )}
 
-          {extraLinks?.map((extra, idx) => (
-            <SmartLink
-              key={extra.label}
-              href={extra.link}
-              className="project-pill-btn project-pill-btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
-            >
-              <Icon
-                name={
-                  (extra.icon as React.ComponentProps<typeof Icon>["name"]) ||
-                  "arrowUpRightFromSquare"
-                }
-                size="s"
-              />
-              {extra.label}
-            </SmartLink>
-          ))}
+          {extraLinks?.map((extra, idx) => {
+            if (extra.link === link || extra.link === reportLink) return null;
+
+            return (
+              <SmartLink
+                key={`${extra.label}-${idx}`}
+                href={extra.link}
+                className="project-pill-btn project-pill-btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
+              >
+                <Icon
+                  name={
+                    (extra.icon as React.ComponentProps<typeof Icon>["name"]) ||
+                    "arrowUpRightFromSquare"
+                  }
+                  size="s"
+                />
+                {extra.label}
+              </SmartLink>
+            );
+          })}
         </Flex>
       </div>
     </Column>

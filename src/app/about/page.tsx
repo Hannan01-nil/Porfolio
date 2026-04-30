@@ -72,15 +72,13 @@ export default function About() {
         horizontal="center"
         vertical="center"
         style={{
-          minHeight: "90svh",
-          padding: "160px 24px 120px",
-          justifyContent: "center",
-          transform: "translateY(-60px)",
+          minHeight: "auto",
+          padding: "64px 24px 80px",
+          justifyContent: "start",
         }}
         s={{
           minHeight: "auto",
-          transform: "none",
-          padding: "80px 16px 40px",
+          padding: "48px 16px 40px",
         }}
       >
         <Row
@@ -156,7 +154,7 @@ export default function About() {
             </RevealFx>
 
             <Column gap="16">
-              <RevealFx translateY="12" delay={0.3}>
+              <RevealFx translateY="10" delay={0.3}>
                 <Text
                   variant="body-default-l"
                   style={{ color: "var(--text-secondary)", lineHeight: "1.8", fontSize: "1.15rem" }}
@@ -316,7 +314,45 @@ export default function About() {
             </RevealFx>
           </Column>
 
-          {/* Removed shortcut navs for cleaner mobile experience */}
+          {/* COLUMN 3: RIGHT (NAV) - Hidden on Mobile */}
+          <Column style={{ width: "260px" }} gap="16" s={{ display: "none" }}>
+            <RevealFx translateY="16" delay={0.4}>
+              <div className="quick-nav-container">
+                <a href="#education" className="hero-nav-btn">
+                  <img
+                    src="https://api.iconify.design/mdi:school-outline.svg?color=white"
+                    alt=""
+                    className="hero-nav-icon"
+                  />
+                  Education
+                </a>
+                <a href="#roadmap" className="hero-nav-btn">
+                  <img
+                    src="https://api.iconify.design/mdi:map-marker-path.svg?color=white"
+                    alt=""
+                    className="hero-nav-icon"
+                  />
+                  Roadmap
+                </a>
+                <a href="#skills" className="hero-nav-btn">
+                  <img
+                    src="https://api.iconify.design/mdi:flash-outline.svg?color=white"
+                    alt=""
+                    className="hero-nav-icon"
+                  />
+                  Skills
+                </a>
+                <a href="#creativity" className="hero-nav-btn">
+                  <img
+                    src="https://api.iconify.design/mdi:palette-outline.svg?color=white"
+                    alt=""
+                    className="hero-nav-icon"
+                  />
+                  Creativity
+                </a>
+              </div>
+            </RevealFx>
+          </Column>
         </Row>
       </Column>
 
