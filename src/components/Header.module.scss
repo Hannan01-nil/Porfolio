@@ -171,60 +171,40 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* MOBILE OVERLAY & HAMBURGER                                           */
+/* FADE MASK — bottom gradient, mobile only                             */
 /* ------------------------------------------------------------------ */
 
-:global(.mobile-menu-overlay) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(3, 3, 3, 0.98);
-    backdrop-filter: blur(40px) saturate(150%);
-    -webkit-backdrop-filter: blur(40px) saturate(150%);
-    z-index: 999990;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: slideDownMenu 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.mask {
+    pointer-events: none;
+    backdrop-filter: blur(0.5rem);
+    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
+    mask-image: linear-gradient(rgba(0, 0, 0) 25%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%;
 }
 
-@keyframes slideDownMenu {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ------------------------------------------------------------------ */
+/* MOBILE — pill floats at bottom                                       */
+/* ------------------------------------------------------------------ */
 
-:global(.mobile-menu-overlay button),
-:global(.mobile-menu-overlay a) {
-    width: 280px;
-    justify-content: center;
-    padding: 20px 32px !important;
-    font-size: 1.25rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.02em;
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 16px !important;
-    margin-bottom: 8px;
-    transition: all 0.3s ease !important;
-}
+@media (max-width: breakpoints.$s) {
+    .position {
+        top: auto;
+        bottom: var(--static-space-24);
+    }
 
-:global(.mobile-menu-overlay [aria-selected="true"]) {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(34, 211, 238, 0.15)) !important;
-    border-color: rgba(34, 211, 238, 0.3) !important;
-    color: white !important;
-    font-weight: 600 !important;
-    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1) !important;
-}
+    .mask {
+        transform: rotate(180deg);
+        bottom: 0;
+    }
 
-:global(.hamburger-btn) {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.1) !important;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    backdrop-filter: blur(20px);
-}
+    :global(.pill-nav) {
+        box-shadow: var(--card-shadow) !important;
+        padding: 6px !important;
+    }
 
-:global(.hamburger-btn:active) {
-    transform: scale(0.92) !important;
+    :global(.pill-nav button),
+    :global(.pill-nav a) {
+        padding: 10px 16px !important;
+        margin: 0 1px !important;
+    }
 }

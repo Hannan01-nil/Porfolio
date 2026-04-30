@@ -80,7 +80,7 @@ export default function About() {
         s={{
           minHeight: "auto",
           transform: "none",
-          padding: "120px 24px 80px",
+          padding: "80px 16px 40px",
         }}
       >
         <Row
@@ -99,8 +99,9 @@ export default function About() {
                 className="floating-avatar"
                 style={{
                   overflow: "hidden",
-                  width: 320,
-                  height: 320,
+                  width: "100%",
+                  maxWidth: "320px",
+                  aspectRatio: "1/1",
                   borderRadius: "50%",
                   background: "var(--magic-glass-bg)",
                   display: "flex",
@@ -108,12 +109,13 @@ export default function About() {
                   justifyContent: "center",
                   boxShadow: "var(--card-shadow)",
                   border: "1px solid var(--magic-border)",
+                  margin: "0 auto",
                 }}
               >
                 <div
                   style={{
-                    width: 304,
-                    height: 304,
+                    width: "calc(100% - 16px)",
+                    height: "calc(100% - 16px)",
                     borderRadius: "50%",
                     overflow: "hidden",
                     position: "relative",
@@ -124,7 +126,7 @@ export default function About() {
                     src={person.avatar}
                     alt={person.name}
                     fill
-                    sizes="(max-width: 768px) 280px, 304px"
+                    sizes="(max-width: 768px) 100vw, 304px"
                     style={{
                       objectFit: "cover",
                       objectPosition: "3% 3%",
@@ -314,45 +316,7 @@ export default function About() {
             </RevealFx>
           </Column>
 
-          {/* COLUMN 3: RIGHT (NAV) */}
-          <Column style={{ width: "260px" }} gap="16" s={{ width: "100%", horizontal: "center" }}>
-            <RevealFx translateY="16" delay={0.4}>
-              <div className="quick-nav-container">
-                <a href="#education" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:school-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Education
-                </a>
-                <a href="#roadmap" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:map-marker-path.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Roadmap
-                </a>
-                <a href="#skills" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:flash-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Skills
-                </a>
-                <a href="#creativity" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:palette-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Creativity
-                </a>
-              </div>
-            </RevealFx>
-          </Column>
+          {/* Removed shortcut navs for cleaner mobile experience */}
         </Row>
       </Column>
 
@@ -361,12 +325,12 @@ export default function About() {
         fillWidth
         horizontal="center"
         style={{
-          paddingBlock: "160px",
+          paddingBlock: "80px",
           background:
             "linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.05), transparent)",
         }}
         s={{
-          paddingBlock: "100px",
+          paddingBlock: "40px",
         }}
       >
         <Column maxWidth="xl" fillWidth paddingX="24" gap="64">
@@ -869,22 +833,7 @@ export default function About() {
       {/* ------------------------------------------------------------------ */}
       <Column fillWidth horizontal="center" paddingY="64">
         <Column maxWidth="xl" fillWidth paddingX="24">
-          <Row horizontal="end" vertical="center">
-            <Row gap="24">
-              <a
-                href="#about-top"
-                className="back-to-top-button"
-                style={{ textDecoration: "none" }}
-              >
-                <img
-                  src="https://api.iconify.design/mdi:arrow-up.svg?color=white"
-                  alt="Up"
-                  className="back-to-top-icon"
-                />
-                Back to Top
-              </a>
-            </Row>
-          </Row>
+          {/* Back to top removed for cleaner mobile UX */}
         </Column>
       </Column>
     </Column>

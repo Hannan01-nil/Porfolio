@@ -91,75 +91,63 @@ export const Header = () => {
           {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
 
-        <Row horizontal="center" className="desktop-nav" s={{ hide: true }}>
+        <Row horizontal="center">
           <Row className="pill-nav" radius="m-4" padding="4" horizontal="center" zIndex={1}>
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" label="Home" selected={pathname === "/"} />
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton prefixIcon="home" href="/" label="Home" selected={pathname === "/"} />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                  </Row>
+                </>
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
-                <ToggleButton prefixIcon="person" href="/about" label={about.label} selected={pathname === "/about"} />
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton prefixIcon="person" href="/about" label={about.label} selected={pathname === "/about"} />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton prefixIcon="person" href="/about" selected={pathname === "/about"} />
+                  </Row>
+                </>
               )}
               {routes["/work"] && (
-                <ToggleButton prefixIcon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton prefixIcon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton prefixIcon="grid" href="/work" selected={pathname.startsWith("/work")} />
+                  </Row>
+                </>
               )}
               {routes["/resume"] && (
-                <ToggleButton prefixIcon="document" href="/resume" label={resume.label} selected={pathname === "/resume"} />
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton prefixIcon="document" href="/resume" label={resume.label} selected={pathname === "/resume"} />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton prefixIcon="document" href="/resume" selected={pathname === "/resume"} />
+                  </Row>
+                </>
               )}
               {routes["/contact"] && (
-                <ToggleButton prefixIcon="email" href="/contact" label={contact.label} selected={pathname === "/contact"} />
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton prefixIcon="email" href="/contact" label={contact.label} selected={pathname === "/contact"} />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton prefixIcon="email" href="/contact" selected={pathname === "/contact"} />
+                  </Row>
+                </>
               )}
             </Row>
           </Row>
         </Row>
-
-        {/* MOBILE HAMBURGER TOGGLE */}
-        <Row hide s={{ hide: false }} horizontal="center" zIndex={10}>
-          <Button
-            variant="secondary"
-            size="m"
-            className="hamburger-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            style={{ borderRadius: "50%", padding: "12px", background: "var(--magic-glass-bg)", border: "1px solid var(--magic-border)", zIndex: 999999, display: "flex", alignItems: "center", justifyContent: "center" }}
-          >
-            {isMenuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            )}
-          </Button>
-        </Row>
-
-        {/* FULL SCREEN MOBILE MENU OVERLAY */}
-        {isMenuOpen && (
-          <div className="mobile-menu-overlay">
-            <Column gap="24" horizontal="center" vertical="center" fillWidth>
-              {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" label="Home" selected={pathname === "/"} />
-              )}
-              {routes["/about"] && (
-                <ToggleButton prefixIcon="person" href="/about" label={about.label} selected={pathname === "/about"} />
-              )}
-              {routes["/work"] && (
-                <ToggleButton prefixIcon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
-              )}
-              {routes["/resume"] && (
-                <ToggleButton prefixIcon="document" href="/resume" label={resume.label} selected={pathname === "/resume"} />
-              )}
-              {routes["/contact"] && (
-                <ToggleButton prefixIcon="email" href="/contact" label={contact.label} selected={pathname === "/contact"} />
-              )}
-            </Column>
-          </div>
-        )}
 
         <Flex
           fillWidth

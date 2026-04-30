@@ -1,7 +1,7 @@
 "use client";
 
 import { baseURL, contact, locationLabel, person, phone, social } from "@/resources";
-import { Column, Heading, Icon, Meta, RevealFx, Row, Schema, Text } from "@once-ui-system/core";
+import { Column, Flex, Heading, Icon, Meta, RevealFx, Row, Schema, Text } from "@once-ui-system/core";
 import React from "react";
 
 export default function Contact() {
@@ -118,13 +118,14 @@ export default function Contact() {
 
           {/* Action Buttons Row */}
           <Column fillWidth gap="16" horizontal="center">
-            <Row gap="16" fillWidth wrap horizontal="center">
+            <Flex gap="16" fillWidth wrap direction="row" s={{ direction: "column" }} horizontal="center">
               <a
                 href={`mailto:${person.email}`}
                 className="project-pill-btn project-pill-btn-primary"
                 style={{
                   textDecoration: "none",
-                  width: "220px",
+                  width: "100%",
+                  maxWidth: "280px",
                   height: "52px",
                   display: "flex",
                   alignItems: "center",
@@ -139,7 +140,8 @@ export default function Contact() {
                 className="project-pill-btn project-pill-btn-secondary"
                 style={{
                   textDecoration: "none",
-                  width: "220px",
+                  width: "100%",
+                  maxWidth: "280px",
                   height: "52px",
                   display: "flex",
                   alignItems: "center",
@@ -149,7 +151,7 @@ export default function Contact() {
                 <Icon name="document" size="s" />
                 Download Resume
               </a>
-            </Row>
+            </Flex>
           </Column>
 
           {/* Social Icons Row */}

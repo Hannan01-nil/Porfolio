@@ -156,6 +156,7 @@ html {
   padding: 1px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -858,8 +859,7 @@ html {
   background: rgba(15, 15, 25, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid var(--accent-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -867,12 +867,7 @@ html {
   text-align: center;
   min-height: 320px;
   width: 100%;
-}
-
-.creative-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: var(--accent-color);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px var(--accent-glow);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 30px var(--accent-glow);
 }
 
 .creative-item::before {
@@ -884,11 +879,6 @@ html {
   height: 140px;
   background: var(--accent-color);
   filter: blur(80px);
-  opacity: 0.15;
-  transition: all 0.6s ease;
-}
-
-.creative-item:hover::before {
   opacity: 0.35;
   transform: scale(1.6);
 }

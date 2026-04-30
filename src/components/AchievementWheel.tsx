@@ -127,7 +127,7 @@ export const AchievementWheel = () => {
         <div
           style={{
             position: "absolute",
-            left: isMobile ? "2rem" : "50%",
+            left: isMobile ? "1.5rem" : "50%",
             top: 0,
             height: "100%",
             width: "2px",
@@ -149,7 +149,8 @@ export const AchievementWheel = () => {
                   display: "grid",
                   gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", // grid-cols-2
                   alignItems: "center",
-                  minHeight: "260px", // min-h-[260px]
+                  minHeight: isMobile ? "auto" : "260px", // min-h-[260px]
+                  paddingBottom: isMobile ? "48px" : "0",
                   overflow: "visible",
                 }}
               >
@@ -159,9 +160,9 @@ export const AchievementWheel = () => {
                     gridColumn: isMobile ? 1 : isLeft ? 1 : 2,
                     justifySelf: isMobile ? "start" : isLeft ? "end" : "start",
                     marginRight: isMobile ? 0 : isLeft ? "5rem" : 0, // mr-20
-                    marginLeft: isMobile ? "4.5rem" : isLeft ? 0 : "5rem", // ml-20
+                    marginLeft: isMobile ? "3.5rem" : isLeft ? 0 : "5rem", // ml-20
                     width: "100%",
-                    maxWidth: isMobile ? "calc(100% - 6rem)" : "448px",
+                    maxWidth: isMobile ? "100%" : "448px",
                   }}
                 >
                   <motion.div
@@ -219,7 +220,7 @@ export const AchievementWheel = () => {
                 <div
                   style={{
                     position: "absolute",
-                    left: isMobile ? "2rem" : "50%",
+                    left: isMobile ? "1.5rem" : "50%",
                     top: "50%",
                     transform: isMobile ? "translate(-50%, -50%)" : "translate(-50%, -50%)",
                     zIndex: 20,

@@ -105,10 +105,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Text>
         )}
 
-        <div className="project-footer">
+        <Flex
+          fillWidth
+          gap="16"
+          className="project-footer"
+          direction="row"
+          s={{ direction: "column" }}
+          style={{ marginTop: "8px" }}
+        >
           <SmartLink
             href={readMoreLink || href}
             className="project-pill-btn project-pill-btn-primary"
+            style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
             {...(readMoreLink && { target: "_blank", rel: "noopener noreferrer" })}
           >
             <Icon name="arrowRight" size="s" />
@@ -121,6 +129,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="project-pill-btn project-pill-btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
             >
               <Icon name={link.includes("github") ? "github" : "arrowUpRightFromSquare"} size="s" />
               View Project
@@ -133,6 +142,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="project-pill-btn project-pill-btn-secondary report-btn pdf"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
             >
               <Icon name="document" size="s" />
               {reportLabel || "Project Report"}
@@ -146,6 +156,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="project-pill-btn project-pill-btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
             >
               <Icon
                 name={
@@ -157,7 +168,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {extra.label}
             </SmartLink>
           ))}
-        </div>
+        </Flex>
       </div>
     </Column>
   );
