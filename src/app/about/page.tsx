@@ -73,14 +73,14 @@ export default function About() {
         vertical="center"
         style={{
           minHeight: "90svh",
-          padding: "48px 24px 80px",
+          padding: "160px 24px 120px",
           justifyContent: "center",
           transform: "translateY(-60px)",
         }}
         s={{
           minHeight: "auto",
           transform: "none",
-          padding: "100px 24px 64px",
+          padding: "120px 24px 80px",
         }}
       >
         <Row
@@ -361,9 +361,12 @@ export default function About() {
         fillWidth
         horizontal="center"
         style={{
-          paddingBlock: "120px",
+          paddingBlock: "160px",
           background:
-            "linear-gradient(to bottom, transparent, rgba(var(--c-purple-2), 0.05), transparent)",
+            "linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.05), transparent)",
+        }}
+        s={{
+          paddingBlock: "100px",
         }}
       >
         <Column maxWidth="xl" fillWidth paddingX="24" gap="64">

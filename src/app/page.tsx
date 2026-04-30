@@ -58,7 +58,7 @@ export default function Home() {
         s={{
           transform: "none",
           minHeight: "100svh",
-          padding: "80px 24px 64px",
+          padding: "160px 24px 100px",
         }}
         gap="16"
       >
@@ -139,6 +139,25 @@ export default function Home() {
             </Heading>
           </div>
         </RevealFx>
+
+        <RevealFx translateY="8" delay={0.4} horizontal="center">
+          <Button
+            href="/work"
+            size="l"
+            style={{
+              marginTop: "24px",
+              background: "linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(34, 211, 238, 0.2))",
+              border: "1px solid rgba(168, 85, 247, 0.5)",
+              color: "white",
+              padding: "0 32px",
+              borderRadius: "999px",
+              boxShadow: "0 8px 32px rgba(168, 85, 247, 0.15)",
+              transition: "all 0.3s ease",
+            }}
+          >
+            Explore My Work
+          </Button>
+        </RevealFx>
       </Column>
 
       {/* ------------------------------------------------------------------ */}
@@ -147,9 +166,10 @@ export default function Home() {
       <Column
         fillWidth
         horizontal="center"
-        paddingY="80"
-        gap="64"
-        style={{ padding: "40px 24px 120px" }}
+        paddingY="104"
+        gap="80"
+        style={{ padding: "80px 24px 160px" }}
+        s={{ gap: "64", padding: "60px 24px 120px" }}
       >
         {/* INTRO BLOCK */}
         <RevealFx translateY="8" delay={0.1} fillWidth horizontal="center">
