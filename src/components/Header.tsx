@@ -5,16 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import {
-  routes,
-  display,
-  person,
-  about,
-  work,
-  resume,
-  contact,
-  locationLabel,
-} from "@/resources";
+import { about, contact, display, locationLabel, person, resume, routes, work } from "@/resources";
 
 import styles from "./Header.module.scss";
 
@@ -72,31 +63,30 @@ export const Header = () => {
         className={styles.position}
         position="fixed"
         as="header"
-        zIndex={99999}
         fillWidth
         padding="8"
         top="0"
-        style={{ 
-          display: 'grid',
-          gridTemplateColumns: '1fr auto 1fr',
-          alignItems: 'center',
-          width: '100%',
-          padding: '16px 24px',
-          transition: 'transform 0.3s ease'
+        style={{
+          zIndex: 99999,
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          alignItems: "center",
+          width: "100%",
+          padding: "16px 24px",
+          transition: "transform 0.3s ease",
         }}
       >
-        <Row fillWidth vertical="center" textVariant="body-default-s" style={{ color: 'var(--text-secondary)' }}>
+        <Row
+          fillWidth
+          vertical="center"
+          textVariant="body-default-s"
+          style={{ color: "var(--text-secondary)" }}
+        >
           {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
 
         <Row horizontal="center">
-          <Row
-            className="pill-nav"
-            radius="m-4"
-            padding="4"
-            horizontal="center"
-            zIndex={1}
-          >
+          <Row className="pill-nav" radius="m-4" padding="4" horizontal="center" zIndex={1}>
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
                 <>
@@ -190,18 +180,18 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-
             </Row>
           </Row>
         </Row>
 
-        <Flex fillWidth horizontal="end" vertical="center" textVariant="body-default-s" style={{ color: 'var(--text-secondary)' }}>
-          <Flex
-            paddingRight="12"
-            horizontal="end"
-            vertical="center"
-            gap="20"
-          >
+        <Flex
+          fillWidth
+          horizontal="end"
+          vertical="center"
+          textVariant="body-default-s"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          <Flex paddingRight="12" horizontal="end" vertical="center" gap="20">
             <Flex s={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>

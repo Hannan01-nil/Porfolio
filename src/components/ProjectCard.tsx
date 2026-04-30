@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  Icon,
-  SmartLink,
-  Text,
-} from "@once-ui-system/core";
+import { Carousel, Column, Flex, Heading, Icon, SmartLink, Text } from "@once-ui-system/core";
 
 interface ProjectCardProps {
   href: string;
@@ -40,11 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   reportLabel,
 }) => {
   return (
-    <Column 
-      fillWidth 
-      gap="m" 
-      className="project-card-premium"
-    >
+    <Column fillWidth gap="m" className="project-card-premium">
       <div className="project-image-container">
         <Carousel
           priority={priority}
@@ -69,22 +57,31 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="project-card-content">
         {tag && (
-          <div className={`project-badge ${tag === 'Group Project' ? 'badge-group' : 'badge-individual'}`}>
+          <div
+            className={`project-badge ${tag === "Group Project" ? "badge-group" : "badge-individual"}`}
+          >
             {tag}
           </div>
         )}
 
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           {title && (
-            <Heading 
-              as="h2" 
-              wrap="balance" 
-              variant="heading-strong-xl" 
-              style={{ 
+            <Heading
+              as="h2"
+              wrap="balance"
+              variant="heading-strong-xl"
+              style={{
                 lineHeight: 1.15,
                 letterSpacing: "-0.02em",
                 fontWeight: 700,
-                color: 'white'
+                color: "white",
               }}
             >
               {title}
@@ -93,15 +90,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {description?.trim() && (
-          <Text 
-            wrap="balance" 
-            variant="body-default-m" 
-            style={{ 
-              lineHeight: '1.8', 
-              color: 'rgba(255, 255, 255, 0.65)',
-              fontSize: '1rem',
-              width: '100%',
-              maxWidth: '100%'
+          <Text
+            wrap="balance"
+            variant="body-default-m"
+            style={{
+              lineHeight: "1.8",
+              color: "rgba(255, 255, 255, 0.65)",
+              fontSize: "1rem",
+              width: "100%",
+              maxWidth: "100%",
             }}
           >
             {description}
@@ -114,7 +111,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             className="project-pill-btn project-pill-btn-primary"
             {...(readMoreLink && { target: "_blank", rel: "noopener noreferrer" })}
           >
-            <Icon name="arrowRight" size="18" />
+            <Icon name="arrowRight" size="s" />
             Read More
           </SmartLink>
 
@@ -125,7 +122,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon name={link.includes('github') ? 'github' : 'arrowUpRightFromSquare'} size="18" />
+              <Icon name={link.includes("github") ? "github" : "arrowUpRightFromSquare"} size="s" />
               View Project
             </SmartLink>
           )}
@@ -137,20 +134,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon name="document" size="18" />
+              <Icon name="document" size="s" />
               {reportLabel || "Project Report"}
             </SmartLink>
           )}
 
           {extraLinks?.map((extra, idx) => (
             <SmartLink
-              key={idx}
+              key={extra.label}
               href={extra.link}
               className="project-pill-btn project-pill-btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon name={(extra.icon as any) || 'arrowUpRightFromSquare'} size="18" />
+              <Icon
+                name={
+                  (extra.icon as React.ComponentProps<typeof Icon>["name"]) ||
+                  "arrowUpRightFromSquare"
+                }
+                size="s"
+              />
               {extra.label}
             </SmartLink>
           ))}

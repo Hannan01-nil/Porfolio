@@ -9,8 +9,6 @@ export function TypingEffect({ titles }: { titles: string[] }) {
   const [typingSpeed, setTypingSpeed] = useState(100);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    
     const handleTyping = () => {
       const i = loopNum % titles.length;
       const fullText = titles[i];
@@ -18,7 +16,7 @@ export function TypingEffect({ titles }: { titles: string[] }) {
       setText(
         isDeleting
           ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
+          : fullText.substring(0, text.length + 1),
       );
 
       if (!isDeleting && text === fullText) {
@@ -33,13 +31,13 @@ export function TypingEffect({ titles }: { titles: string[] }) {
       }
     };
 
-    timer = setTimeout(handleTyping, typingSpeed);
+    const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, titles]);
 
   return (
     <span style={{ position: "relative", display: "inline-flex", whiteSpace: "pre-wrap" }}>
-      <span style={{ color: '#ffffff', fontWeight: 700 }}>{text}</span>
+      <span style={{ color: "#ffffff", fontWeight: 700 }}>{text}</span>
       <span className="blinking-cursor">|</span>
     </span>
   );

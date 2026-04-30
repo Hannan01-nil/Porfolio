@@ -1,11 +1,12 @@
 export function formatDate(date: string, includeRelative = false) {
   const currentDate = new Date();
 
-  if (!date.includes("T")) {
-    date = `${date}T00:00:00`;
+  let targetDateStr = date;
+  if (!targetDateStr.includes("T")) {
+    targetDateStr = `${targetDateStr}T00:00:00`;
   }
 
-  const targetDate = new Date(date);
+  const targetDate = new Date(targetDateStr);
   const timeDifference = currentDate.getTime() - targetDate.getTime();
   const daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   const hoursAgo = Math.floor(timeDifference / (1000 * 60 * 60));

@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Text } from "@once-ui-system/core";
 
 const locationLabel = "Vaniyambadi, Tamil Nadu, India";
@@ -8,7 +8,8 @@ const resume = {
   path: "/resume",
   label: "Resume",
   title: "Resume",
-  description: "Academic profile, skills, and project-focused experience. Download the latest PDF version of my resume.",
+  description:
+    "Academic profile, skills, and project-focused experience. Download the latest PDF version of my resume.",
 };
 
 const contact = {
@@ -67,7 +68,8 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: "Mohamed Hannan N | Software Portfolio",
-  description: "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
+  description:
+    "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
   headline: <>Mohamed Hannan N</>,
   featured: {
     display: true,
@@ -76,7 +78,8 @@ const home: Home = {
   },
   subline: (
     <>
-      Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.
+      Motivated BCA student passionate about software, AI tools, modern development and building
+      real-world solutions.
     </>
   ),
 };
@@ -87,21 +90,22 @@ const homeRotatingSubtitles = [
   "Software Developer",
   "AI/ML Engineer",
   "Problem Solver",
-  "Tech Enthusiast"
+  "Tech Enthusiast",
 ];
 
 const homeBadges = [
   "Based in Vaniyambadi",
   "Open to Opportunities",
   "Fast Learner",
-  "Creative Thinker"
+  "Creative Thinker",
 ];
 
 const about: About = {
   path: "/about",
   label: "About",
   title: "About",
-  description: "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools.",
+  description:
+    "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools.",
   tableOfContent: {
     display: false,
     subItems: false,
@@ -119,7 +123,9 @@ const about: About = {
     description: (
       <>
         <Text as="p" variant="body-default-l" marginBottom="16">
-          I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools. I enjoy learning fast, building useful projects, and continuously improving my technical skills.
+          I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development,
+          web technologies, machine learning, and modern tools. I enjoy learning fast, building
+          useful projects, and continuously improving my technical skills.
         </Text>
       </>
     ),
@@ -135,11 +141,19 @@ const about: About = {
     institutions: [
       {
         name: "Vellore Institute of Technology (VIT)",
-        description: <>Bachelor of Computer Applications (BCA) <br/> 2024 - 2027 <br/> CGPA: 8.91</>,
+        description: (
+          <>
+            Bachelor of Computer Applications (BCA) <br /> 2024 - 2027 <br /> CGPA: 8.91
+          </>
+        ),
       },
       {
         name: "Islamiah Boys Higher Secondary School",
-        description: <>Completed 2023 <br/> 12th Grade: 88% <br/> 10th Grade: 79%</>,
+        description: (
+          <>
+            Completed 2023 <br /> 12th Grade: 88% <br /> 10th Grade: 79%
+          </>
+        ),
       },
     ],
   },
@@ -151,12 +165,12 @@ const about: About = {
         title: "Programming",
         description: <>Python, Java, C, C++, JavaScript, PHP</>,
         tags: [
-          { name: "Python" }, 
-          { name: "Java" }, 
-          { name: "C" }, 
-          { name: "C++" }, 
+          { name: "Python" },
+          { name: "Java" },
+          { name: "C" },
+          { name: "C++" },
           { name: "JavaScript", icon: "javascript" },
-          { name: "PHP" }
+          { name: "PHP" },
         ],
       },
       {
@@ -173,12 +187,12 @@ const about: About = {
       {
         title: "Backend",
         description: <>Node.js, Express.js, Flask</>,
-        tags: [{ name: "Node.js" }, { name: "Express.js" }, { name: "Flask"}],
+        tags: [{ name: "Node.js" }, { name: "Express.js" }, { name: "Flask" }],
       },
       {
         title: "Database",
         description: <>MySQL, MongoDB, SQL, DBMS</>,
-        tags: [{ name: "MySQL" }, { name: "MongoDB" }, { name: "SQL" }, {name: "DBMS"}],
+        tags: [{ name: "MySQL" }, { name: "MongoDB" }, { name: "SQL" }, { name: "DBMS" }],
       },
       {
         title: "Machine Learning",
@@ -212,7 +226,7 @@ const about: About = {
           { name: "OOP" },
           { name: "DSA" },
           { name: "REST APIs" },
-          { name: "Problem Solving" }
+          { name: "Problem Solving" },
         ],
       },
     ],
@@ -227,7 +241,10 @@ const aboutTimeline = [
   { year: "2026", text: "Built Stress Prediction (Streeiq) project" },
   { year: "2026", text: "Built Smart Attendance System IoT project" },
   { year: "NOW", text: "Exploring AI/ML, modern development, advanced tools" },
-  { year: "FUTURE", text: "Becoming a skilled Software / AI / ML engineer and building impactful products" }
+  {
+    year: "FUTURE",
+    text: "Becoming a skilled Software / AI / ML engineer and building impactful products",
+  },
 ];
 
 const aboutCreative = [
@@ -235,12 +252,12 @@ const aboutCreative = [
   "Videography",
   "Video Editing",
   "Creative Framing",
-  "Content Creation"
+  "Content Creation",
 ];
 
-// Empty learning/tools because it's merged or unnecessary based on latest requirements 
+// Empty learning/tools because it's merged or unnecessary based on latest requirements
 // but we keep exports to prevent TS errors in unmodified downstream pages, just in case.
-const aboutLearning: string[] = []; 
+const aboutLearning: string[] = [];
 const aboutTools: string[] = [];
 
 const blog: Blog = {

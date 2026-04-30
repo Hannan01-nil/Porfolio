@@ -1,6 +1,6 @@
+import { ProjectCard } from "@/components";
 import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
-import { ProjectCard } from "@/components";
 
 interface ProjectsProps {
   range?: [number, number?];
@@ -11,8 +11,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
-  if (exclude && exclude.length > 0) {
-    allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
+  if ((exclude?.length ?? 0) > 0) {
+    allProjects = allProjects.filter((post) => !(exclude ?? []).includes(post.slug));
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
@@ -26,23 +26,23 @@ export function Projects({ range, exclude }: ProjectsProps) {
   return (
     <div
       style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        gap: '40px',
-        width: '100%',
-        marginBottom: '80px',
-        padding: '0 24px',
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "40px",
+        width: "100%",
+        marginBottom: "80px",
+        padding: "0 24px",
       }}
     >
       {displayedProjects.map((post, index) => (
-        <div 
-          key={post.slug} 
-          style={{ 
-            width: '100%', 
-            maxWidth: '560px', 
-            display: 'flex', 
-            justifyContent: 'center' 
+        <div
+          key={post.slug}
+          style={{
+            width: "100%",
+            maxWidth: "560px",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           <ProjectCard
@@ -58,13 +58,13 @@ export function Projects({ range, exclude }: ProjectsProps) {
             extraLinks={post.metadata.extraLinks}
             readMoreLink={post.metadata.readMoreLink}
             reportLink={
-              post.metadata.title === "AI-Based Smart Attendance System - IoT" 
+              post.metadata.title === "AI-Based Smart Attendance System - IoT"
                 ? "/images/Attendance_System_IoT/AI_Smart_Attendance_System_Report.pdf"
                 : post.metadata.title === "Student Stress Prediction System - Stressiq"
-                ? "/images/Stress_Prediction/stressiq-report.pdf"
-                : post.metadata.title === "HCI Case Study Project - Where Is My Train"
-                ? "/images/HCI/HCI_CaseStudy-1.pdf"
-                : undefined
+                  ? "/images/Stress_Prediction/stressiq-report.pdf"
+                  : post.metadata.title === "HCI Case Study Project - Where Is My Train"
+                    ? "/images/HCI/HCI_CaseStudy-1.pdf"
+                    : undefined
             }
             reportLabel={
               post.metadata.title === "HCI Case Study Project - Where Is My Train"

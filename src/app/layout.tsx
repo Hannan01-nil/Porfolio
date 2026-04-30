@@ -4,17 +4,17 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 
+import { Footer, Header, Providers, RouteGuard } from "@/components";
+import { baseURL, dataStyle, effects, fonts, home, person, style } from "@/resources";
 import {
   Background,
   Column,
   Flex,
   Meta,
-  opacity,
   RevealFx,
-  SpacingToken,
+  type SpacingToken,
+  type opacity,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
 export async function generateMetadata() {
   const metadata = Meta.generate({
@@ -64,6 +64,7 @@ export default async function RootLayout({
       <head>
         <script
           id="theme-init"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed for theme initialization without FOUC
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -101,10 +102,10 @@ export default async function RootLayout({
         <Providers>
           {/* Magic UI Global Background — lives safely inside body */}
           <div className="magic-background">
-            <div className="magic-orb magic-orb-1"></div>
-            <div className="magic-orb magic-orb-2"></div>
-            <div className="magic-orb magic-orb-3"></div>
-            <div className="magic-noise"></div>
+            <div className="magic-orb magic-orb-1" />
+            <div className="magic-orb magic-orb-2" />
+            <div className="magic-orb magic-orb-3" />
+            <div className="magic-noise" />
           </div>
 
           <Column
@@ -158,7 +159,7 @@ export default async function RootLayout({
             </RevealFx>
             <Flex fillWidth minHeight="16" s={{ hide: true }} />
             <Header />
-            <Flex zIndex={0} fillWidth horizontal="center" flex={1} style={{ paddingTop: '100px' }}>
+            <Flex zIndex={0} fillWidth horizontal="center" flex={1} style={{ paddingTop: "100px" }}>
               <Flex horizontal="center" fillWidth minHeight="0">
                 <RouteGuard>{children}</RouteGuard>
               </Flex>

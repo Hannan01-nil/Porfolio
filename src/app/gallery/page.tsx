@@ -1,7 +1,7 @@
-import { notFound } from "next/navigation";
-import { Flex, Meta, Schema } from "@once-ui-system/core";
 import GalleryView from "@/components/gallery/GalleryView";
 import { baseURL, gallery, person, routes } from "@/resources";
+import { Flex, Meta, Schema } from "@once-ui-system/core";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata() {
   return Meta.generate({

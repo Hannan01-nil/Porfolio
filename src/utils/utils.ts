@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import matter from "gray-matter";
 
 type Team = {
@@ -19,6 +19,8 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  extraLinks?: { label: string; link: string; icon?: string }[];
+  readMoreLink?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -46,9 +48,11 @@ function readMDXFile(filePath: string) {
     summary: data.summary || "",
     image: data.image || "",
     images: data.images || [],
-    tag: data.tag || [],
+    tag: data.tag || "",
     team: data.team || [],
     link: data.link || "",
+    extraLinks: data.extraLinks,
+    readMoreLink: data.readMoreLink,
   };
 
   return { metadata, content };
@@ -69,6 +73,6 @@ function getMDXData(dir: string) {
 }
 
 export function getPosts(customPath = ["", "", "", ""]) {
-  const postsDir = path.join(process.cwd(), ...customPath);
+  const postsDir = path.join(/*turbopackIgnore: true*/ process.cwd(), ...customPath);
   return getMDXData(postsDir);
 }
