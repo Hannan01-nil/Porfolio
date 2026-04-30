@@ -154,7 +154,7 @@ export default function About() {
             </RevealFx>
 
             <Column gap="16">
-              <RevealFx translateY="10" delay={0.3}>
+              <RevealFx translateY="16" delay={0.3}>
                 <Text
                   variant="body-default-l"
                   style={{ color: "var(--text-secondary)", lineHeight: "1.8", fontSize: "1.15rem" }}
