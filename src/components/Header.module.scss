@@ -171,33 +171,46 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* FADE MASK — bottom gradient, mobile only                             */
+/* MOBILE OVERLAY & HAMBURGER                                           */
 /* ------------------------------------------------------------------ */
 
-.mask {
-    pointer-events: none;
-    backdrop-filter: blur(0.5rem);
-    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
-    mask-image: linear-gradient(rgba(0, 0, 0) 25%, rgba(0, 0, 0, 0) 100%);
-    mask-size: 100% 100%;
+:global(.mobile-menu-overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 3, 3, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999990;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInMenu 0.3s ease forwards;
 }
 
-/* ------------------------------------------------------------------ */
-/* MOBILE — pill floats at bottom                                       */
-/* ------------------------------------------------------------------ */
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-@media (max-width: breakpoints.$s) {
-    .position {
-        top: auto;
-        bottom: var(--static-space-24);
-    }
+:global(.mobile-menu-overlay button),
+:global(.mobile-menu-overlay a) {
+    width: 250px;
+    justify-content: center;
+    padding: 16px 24px !important;
+    font-size: 1.1rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
 
-    .mask {
-        transform: rotate(180deg);
-        bottom: 0;
-    }
+:global(.hamburger-btn) {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
 
-    :global(.pill-nav) {
-        box-shadow: var(--card-shadow) !important;
-    }
+:global(.hamburger-btn:active) {
+    transform: scale(0.9) !important;
 }

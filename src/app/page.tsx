@@ -55,6 +55,11 @@ export default function Home() {
           justifyContent: "center",
           transform: "translateY(-80px)",
         }}
+        s={{
+          transform: "none",
+          minHeight: "100svh",
+          padding: "80px 24px 64px",
+        }}
         gap="16"
       >
         <RevealFx translateY="16" delay={0.1} horizontal="center">

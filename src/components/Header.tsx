@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import { Fade, Flex, Line, Row, ToggleButton, Button, Icon, Column } from "@once-ui-system/core";
 
 import { about, contact, display, locationLabel, person, resume, routes, work } from "@/resources";
 
@@ -44,6 +44,12 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -85,104 +91,64 @@ export const Header = () => {
           {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
 
-        <Row horizontal="center">
+        <Row horizontal="center" className="desktop-nav" s={{ hide: true }}>
           <Row className="pill-nav" radius="m-4" padding="4" horizontal="center" zIndex={1}>
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="home"
-                      href="/"
-                      label="Home"
-                      selected={pathname === "/"}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
-                  </Row>
-                </>
+                <ToggleButton prefixIcon="home" href="/" label="Home" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      label={about.label}
-                      selected={pathname === "/about"}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      selected={pathname === "/about"}
-                    />
-                  </Row>
-                </>
+                <ToggleButton prefixIcon="person" href="/about" label={about.label} selected={pathname === "/about"} />
               )}
               {routes["/work"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
+                <ToggleButton prefixIcon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
               )}
               {routes["/resume"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="document"
-                      href="/resume"
-                      label={resume.label}
-                      selected={pathname === "/resume"}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="document"
-                      href="/resume"
-                      selected={pathname === "/resume"}
-                    />
-                  </Row>
-                </>
+                <ToggleButton prefixIcon="document" href="/resume" label={resume.label} selected={pathname === "/resume"} />
               )}
               {routes["/contact"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="email"
-                      href="/contact"
-                      label={contact.label}
-                      selected={pathname === "/contact"}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="email"
-                      href="/contact"
-                      selected={pathname === "/contact"}
-                    />
-                  </Row>
-                </>
+                <ToggleButton prefixIcon="email" href="/contact" label={contact.label} selected={pathname === "/contact"} />
               )}
             </Row>
           </Row>
         </Row>
+
+        {/* MOBILE HAMBURGER TOGGLE */}
+        <Row hide s={{ hide: false }} horizontal="center" zIndex={10}>
+          <Button
+            variant="secondary"
+            size="m"
+            className="hamburger-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            style={{ borderRadius: "50%", padding: "12px", background: "var(--magic-glass-bg)", border: "1px solid var(--magic-border)", zIndex: 999999 }}
+          >
+            <Icon name={isMenuOpen ? "close" : "menu"} size="m" />
+          </Button>
+        </Row>
+
+        {/* FULL SCREEN MOBILE MENU OVERLAY */}
+        {isMenuOpen && (
+          <div className="mobile-menu-overlay">
+            <Column gap="24" horizontal="center" vertical="center" fillWidth>
+              {routes["/"] && (
+                <ToggleButton prefixIcon="home" href="/" label="Home" selected={pathname === "/"} />
+              )}
+              {routes["/about"] && (
+                <ToggleButton prefixIcon="person" href="/about" label={about.label} selected={pathname === "/about"} />
+              )}
+              {routes["/work"] && (
+                <ToggleButton prefixIcon="grid" href="/work" label={work.label} selected={pathname.startsWith("/work")} />
+              )}
+              {routes["/resume"] && (
+                <ToggleButton prefixIcon="document" href="/resume" label={resume.label} selected={pathname === "/resume"} />
+              )}
+              {routes["/contact"] && (
+                <ToggleButton prefixIcon="email" href="/contact" label={contact.label} selected={pathname === "/contact"} />
+              )}
+            </Column>
+          </div>
+        )}
 
         <Flex
           fillWidth

@@ -26,9 +26,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
   return (
     <div
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
         gap: "40px",
         width: "100%",
         marginBottom: "80px",
@@ -40,7 +39,6 @@ export function Projects({ range, exclude }: ProjectsProps) {
           key={post.slug}
           style={{
             width: "100%",
-            maxWidth: "560px",
             display: "flex",
             justifyContent: "center",
           }}
