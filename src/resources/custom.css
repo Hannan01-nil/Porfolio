@@ -12,7 +12,9 @@
 
 /* Global Theme Variables */
 :root,
-[data-theme="dark"] {
+[data-theme="dark"],
+[data-theme="light"],
+[data-theme="system"] {
   --page-background: #030303;
   --magic-glass-bg: rgba(11, 16, 32, 0.4);
   --magic-border: rgba(255, 255, 255, 0.08);
@@ -61,59 +63,16 @@
   --skill-c: linear-gradient(to right, #cbd5e1, #3b82f6);
 }
 
-[data-theme="light"] {
-  --page-background: #ffffff;
-  --magic-glass-bg: rgba(255, 255, 255, 0.7);
-  --magic-border: rgba(15, 23, 42, 0.1);
-  --magic-border-hover: rgba(15, 23, 42, 0.2);
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --pill-nav-bg: rgba(255, 255, 255, 0.9);
-  --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  --card-shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1), 0 0
-    40px rgba(59, 130, 246, 0.05);
-  --orb-opacity: 0.08;
-  --magic-bg-gradient: radial-gradient(circle at 50% 0%, rgba(203, 213, 225, 0.4) 0%, #ffffff 100%);
 
-  /* Color Palette - Light Mode */
-  --c-purple-1: #7c3aed;
-  --c-purple-2: #a855f7;
-  --c-cyan-1: #0891b2;
-  --c-cyan-2: #06b6d4;
-  --c-violet-1: #6d28d9;
-  --c-violet-2: #8b5cf6;
-  --c-blue-1: #2563eb;
-  --c-blue-2: #06b6d4;
-  --c-pink-1: #db2777;
-  --c-pink-2: #ec4899;
-  --c-orange-1: #ea580c;
-  --c-orange-2: #f59e0b;
-
-  /* Gradient Helper Variables */
-  --g-purple: linear-gradient(to right, var(--c-purple-1), var(--c-purple-2));
-  --g-cyan: linear-gradient(to right, var(--c-cyan-1), var(--c-cyan-2));
-  --g-violet: linear-gradient(to right, var(--c-violet-1), var(--c-violet-2));
-  --g-blue: linear-gradient(to right, var(--c-blue-1), var(--c-blue-2));
-  --g-pink: linear-gradient(to right, var(--c-pink-1), var(--c-pink-2));
-  --g-orange: linear-gradient(to right, var(--c-orange-1), var(--c-orange-2));
-
-  /* Skill Specific - Light */
-  --skill-python: linear-gradient(to right, #0891b2, #1d4ed8);
-  --skill-java: linear-gradient(to right, #c2410c, #be185d);
-  --skill-js: linear-gradient(to right, #b45309, #ea580c);
-  --skill-sql: linear-gradient(to right, #0891b2, #334155);
-  --skill-uiux: linear-gradient(to right, #be185d, #7e22ce);
-  --skill-iot: linear-gradient(to right, #0d9488, #0891b2);
-  --skill-php: linear-gradient(to right, #6d28d9, #4338ca);
-  --skill-testing: linear-gradient(to right, #047857, #0891b2);
-  --skill-c: linear-gradient(to right, #475569, #1d4ed8);
-}
 
 /* Base Typographic Overrides */
+html, body {
+  color-scheme: dark !important;
+  background-color: #0b0f19 !important;
+  color: #ffffff !important;
+}
+
 body {
-  color: var(--text-primary);
-  background: var(--page-background);
   transition: background-color 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
   width: 100%;

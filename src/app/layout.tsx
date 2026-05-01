@@ -54,7 +54,10 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-theme="dark"
+      style={{ colorScheme: "dark" }}
       className={classNames(
+        "dark",
         fonts.heading.variable,
         fonts.body.variable,
         fonts.label.variable,
@@ -98,7 +101,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className="dark bg-[#0b0f19] text-white">
         <Providers>
           {/* Magic UI Global Background — lives safely inside body */}
           <div className="magic-background">
