@@ -44,12 +44,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
 
   return (
     <>
