@@ -4,7 +4,7 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 
-import { Footer, Header, Providers, RouteGuard } from "@/components";
+import { Footer, Header, Providers, RouteGuard, MagicBackground } from "@/components";
 import { baseURL, dataStyle, effects, fonts, home, person, style } from "@/resources";
 import {
   Background,
@@ -101,15 +101,10 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="dark bg-[#0b0f19] text-white">
+      <body className="dark text-white" style={{ background: "transparent" }}>
         <Providers>
           {/* Magic UI Global Background — lives safely inside body */}
-          <div className="magic-background">
-            <div className="magic-orb magic-orb-1" />
-            <div className="magic-orb magic-orb-2" />
-            <div className="magic-orb magic-orb-3" />
-            <div className="magic-noise" />
-          </div>
+          <MagicBackground />
 
           <Column
             fillWidth
@@ -127,32 +122,32 @@ export default async function RootLayout({
                   cursor: effects.mask.cursor,
                 }}
                 gradient={{
-                  display: effects.gradient.display,
-                  opacity: effects.gradient.opacity as opacity,
+                  display: false,
+                  opacity: 0 as opacity,
                   x: effects.gradient.x,
                   y: effects.gradient.y,
                   width: effects.gradient.width,
                   height: effects.gradient.height,
                   tilt: effects.gradient.tilt,
-                  colorStart: effects.gradient.colorStart,
-                  colorEnd: effects.gradient.colorEnd,
+                  colorStart: "static-transparent",
+                  colorEnd: "static-transparent",
                 }}
                 dots={{
-                  display: effects.dots.display,
-                  opacity: effects.dots.opacity as opacity,
+                  display: false,
+                  opacity: 0 as opacity,
                   size: effects.dots.size as SpacingToken,
                   color: effects.dots.color,
                 }}
                 grid={{
-                  display: effects.grid.display,
-                  opacity: effects.grid.opacity as opacity,
+                  display: false,
+                  opacity: 0 as opacity,
                   color: effects.grid.color,
                   width: effects.grid.width,
                   height: effects.grid.height,
                 }}
                 lines={{
-                  display: effects.lines.display,
-                  opacity: effects.lines.opacity as opacity,
+                  display: false,
+                  opacity: 0 as opacity,
                   size: effects.lines.size as SpacingToken,
                   thickness: effects.lines.thickness,
                   angle: effects.lines.angle,

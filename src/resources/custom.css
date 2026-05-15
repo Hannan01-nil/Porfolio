@@ -15,7 +15,7 @@
 [data-theme="dark"],
 [data-theme="light"],
 [data-theme="system"] {
-  --page-background: #030303;
+  --page-background: #050510;
   --magic-glass-bg: rgba(11, 16, 32, 0.4);
   --magic-border: rgba(255, 255, 255, 0.08);
   --magic-border-hover: rgba(255, 255, 255, 0.15);
@@ -27,7 +27,7 @@
   --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0
     40px rgba(139, 92, 246, 0.1);
   --orb-opacity: 0.15;
-  --magic-bg-gradient: radial-gradient(circle at 50% 0%, rgba(11, 16, 32, 0.4) 0%, #030303 100%);
+  --magic-bg-gradient: radial-gradient(circle at 50% 0%, rgba(11, 16, 32, 0.4) 0%, #050510 100%);
 
   /* Color Palette - Dark Mode */
   --c-purple-1: #ffffff;
@@ -68,7 +68,7 @@
 /* Base Typographic Overrides */
 html, body {
   color-scheme: dark !important;
-  background-color: #0b0f19 !important;
+  background-color: transparent !important;
   color: #ffffff !important;
 }
 
