@@ -1,4 +1,5 @@
 import { AchievementWheel } from "@/components/AchievementWheel";
+import { AboutQuickNav } from "@/components/about/AboutQuickNav";
 import { SkillsSection } from "@/components/SkillsSection";
 import {
   about,
@@ -73,12 +74,12 @@ export default function About() {
         vertical="center"
         style={{
           minHeight: "auto",
-          padding: "64px 24px 80px",
+          padding: "clamp(24px, 6vw, 64px) clamp(16px, 4vw, 24px) clamp(40px, 8vw, 80px)",
           justifyContent: "start",
         }}
         s={{
           minHeight: "auto",
-          padding: "48px 16px 40px",
+          padding: "24px 16px 40px",
         }}
       >
         <Row
@@ -317,40 +318,7 @@ export default function About() {
           {/* COLUMN 3: RIGHT (NAV) - Hidden on Mobile */}
           <Column style={{ width: "260px" }} gap="16" s={{ display: "none" }}>
             <RevealFx translateY="16" delay={0.4}>
-              <div className="quick-nav-container">
-                <a href="#education" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:school-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Education
-                </a>
-                <a href="#roadmap" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:map-marker-path.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Roadmap
-                </a>
-                <a href="#skills" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:flash-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Skills
-                </a>
-                <a href="#creativity" className="hero-nav-btn">
-                  <img
-                    src="https://api.iconify.design/mdi:palette-outline.svg?color=white"
-                    alt=""
-                    className="hero-nav-icon"
-                  />
-                  Creativity
-                </a>
-              </div>
+              <AboutQuickNav />
             </RevealFx>
           </Column>
         </Row>
@@ -361,7 +329,7 @@ export default function About() {
         fillWidth
         horizontal="center"
         style={{
-          paddingBlock: "80px",
+          paddingBlock: "clamp(40px, 8vw, 80px)",
           background:
             "linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.05), transparent)",
         }}
@@ -369,14 +337,14 @@ export default function About() {
           paddingBlock: "40px",
         }}
       >
-        <Column maxWidth="xl" fillWidth paddingX="24" gap="64">
+        <Column maxWidth="xl" fillWidth paddingX="24" gap="48" s={{ gap: "32" }}>
           <RevealFx translateY="20">
             <div
               style={{
                 width: "100%",
                 textAlign: "center",
-                marginBottom: "48px",
-                marginTop: "100px",
+                marginBottom: "clamp(24px, 5vw, 48px)",
+                marginTop: "clamp(40px, 10vw, 100px)",
               }}
             >
               <h2
@@ -396,8 +364,8 @@ export default function About() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-              gap: "40px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
+              gap: "clamp(20px, 4vw, 40px)",
             }}
           >
             {/* COLLEGE CARD */}
@@ -659,6 +627,189 @@ export default function About() {
         </Column>
       </Column>
 
+      {/* ------------------------------------------------------------------ */}
+      {/* SECTION 2: EXPERIENCE                                               */}
+      {/* ------------------------------------------------------------------ */}
+      <Column
+        id="experience"
+        fillWidth
+        horizontal="center"
+        className="experience-section"
+        style={{
+          paddingBlock: "clamp(40px, 8vw, 80px)",
+          background:
+            "linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.04), transparent)",
+        }}
+      >
+        <Column maxWidth="xl" fillWidth paddingX="24" gap="48" s={{ gap: "32" }}>
+          <RevealFx translateY="20">
+            <div
+              style={{
+                width: "100%",
+                textAlign: "center",
+                marginBottom: "clamp(24px, 5vw, 48px)",
+              }}
+            >
+              <h2
+                className="sectionAnimatedTitle"
+                style={{
+                  fontSize: "clamp(56px, 8vw, 110px)",
+                  lineHeight: 1,
+                  letterSpacing: "-0.02em",
+                  margin: 0,
+                }}
+              >
+                EXPERIENCE
+              </h2>
+              <Text
+                variant="body-default-l"
+                style={{
+                  color: "var(--text-secondary)",
+                  opacity: 0.8,
+                  textAlign: "center",
+                  maxWidth: "620px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  lineHeight: 1.6,
+                  marginTop: "12px",
+                }}
+              >
+                My professional journey and real-world industry experience.
+              </Text>
+            </div>
+          </RevealFx>
+
+          <RevealFx translateY="24" delay={0.1}>
+            <div className="experience-timeline-wrap">
+              <div className="experience-timeline-line" aria-hidden="true" />
+              <div className="experience-timeline-dot" aria-hidden="true" />
+
+              <Column className="magic-card experience-card" gap="32">
+                <Row
+                  fillWidth
+                  horizontal="between"
+                  vertical="start"
+                  gap="24"
+                  wrap
+                  s={{ direction: "column", gap: "20" }}
+                >
+                  <div className="experience-company-lockup">
+                    <div className="supercx-logo-shell">
+                      <img
+                        src="/images/supercx-logo-green.svg"
+                        alt="SuperCX"
+                        className="supercx-logo-img"
+                        width="160"
+                        height="32"
+                      />
+                    </div>
+                    <Column gap="12" style={{ minWidth: 0 }}>
+                      <Text
+                        variant="body-default-s"
+                        style={{
+                          color: "var(--c-cyan-2)",
+                          fontWeight: 800,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        May 2026 - 1 Month Internship
+                      </Text>
+                      <Heading
+                        variant="heading-strong-xl"
+                        style={{ color: "var(--text-primary)", lineHeight: 1.15 }}
+                      >
+                        Full Stack Developer Intern
+                      </Heading>
+                      <Text
+                        variant="heading-default-s"
+                        style={{
+                          background: "var(--g-violet)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          fontWeight: 700,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        SuperCX Technologies Private Limited
+                      </Text>
+                    </Column>
+                  </div>
+
+                  <div className="experience-icon-shell" aria-hidden="true">
+                    <Icon name="rocket" size="m" style={{ color: "var(--c-purple-2)" }} />
+                  </div>
+                </Row>
+
+                <Row gap="12" wrap>
+                  <div className="edu-badge experience-meta-badge">
+                    <Icon name="globe" size="xs" style={{ color: "#22d3ee" }} />
+                    <span>Hybrid Internship</span>
+                  </div>
+                  <div className="edu-badge experience-meta-badge">
+                    <Icon name="calendar" size="xs" style={{ color: "#a78bfa" }} />
+                    <span>Bangalore, India</span>
+                  </div>
+                </Row>
+
+                <Text
+                  variant="body-default-m"
+                  style={{
+                    color: "var(--text-secondary)",
+                    lineHeight: "1.8",
+                    fontSize: "1.05rem",
+                    maxWidth: "880px",
+                  }}
+                >
+                  Worked as a Full Stack Developer Intern contributing to modern web application
+                  development, UI improvements, frontend responsiveness, and real-world engineering
+                  workflows in a startup environment.
+                </Text>
+
+                <Row gap="12" wrap>
+                  {[
+                    "Full Stack",
+                    "Frontend",
+                    "Responsive UI",
+                    "Startup Experience",
+                    "Engineering",
+                  ].map((tag) => (
+                    <span key={tag} className="glass-tag experience-chip">
+                      {tag}
+                    </span>
+                  ))}
+                </Row>
+
+                <Row gap="12" wrap s={{ direction: "column" }}>
+                  <Button
+                    href="https://www.supercx.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="m"
+                    variant="secondary"
+                    prefixIcon="openLink"
+                    className="experience-link-btn"
+                  >
+                    SuperCX
+                  </Button>
+                  <Button
+                    href="https://www.marhabahaji.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="m"
+                    variant="secondary"
+                    prefixIcon="openLink"
+                    className="experience-link-btn"
+                  >
+                    Marhaba Haji
+                  </Button>
+                </Row>
+              </Column>
+            </div>
+          </RevealFx>
+        </Column>
+      </Column>
+
       <div id="roadmap">
         <AchievementWheel />
       </div>
@@ -680,8 +831,8 @@ export default function About() {
         id="creativity"
         fillWidth
         horizontal="center"
-        paddingTop="160"
-        paddingBottom="160"
+        paddingTop="80"
+        paddingBottom="80"
         className="creative-side-container"
       >
         {/* Background Blobs */}
@@ -697,7 +848,7 @@ export default function About() {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            marginBottom: "80px",
+            marginBottom: "clamp(40px, 8vw, 80px)",
             position: "relative",
             zIndex: 1,
           }}
@@ -747,7 +898,8 @@ export default function About() {
           maxWidth="xl"
           fillWidth
           paddingX="24"
-          gap="64"
+          gap="40"
+          s={{ gap: "32" }}
           style={{ position: "relative", zIndex: 1 }}
         >
           {/* Hero Quote Card (Luxurious) */}

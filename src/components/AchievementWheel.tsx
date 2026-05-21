@@ -36,6 +36,13 @@ const milestones = [
     emoji: "🤖",
   },
   {
+    year: "2026",
+    title: "Internship at SuperCX",
+    desc: "Joined SuperCX as Full Stack Developer Intern, worked on frontend development and responsive UI improvements, and gained startup engineering experience.",
+    emoji: "CX",
+    logo: "/images/supercx-logo-green.svg",
+  },
+  {
     year: "NOW",
     title: "Exploring Modern Tech",
     desc: "Deep diving into AI/ML, cloud architecture, and high-performance full-stack frameworks.",
@@ -66,8 +73,8 @@ export const AchievementWheel = () => {
       id="roadmap"
       style={{
         width: "100%",
-        paddingTop: isMobile ? "5rem" : "9rem",
-        paddingBottom: "8rem",
+        paddingTop: isMobile ? "4rem" : "7rem",
+        paddingBottom: isMobile ? "5rem" : "8rem",
         overflow: "visible",
         position: "relative",
       }}
@@ -76,8 +83,8 @@ export const AchievementWheel = () => {
       <div
         style={{
           maxWidth: "1280px",
-          margin: "0 auto 80px",
-          padding: "0 24px",
+          margin: "0 auto clamp(40px, 8vw, 80px)",
+          padding: "0 clamp(12px, 3vw, 24px)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -180,17 +187,23 @@ export const AchievementWheel = () => {
                         marginBottom: "18px",
                       }}
                     >
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          transform: "translateY(-1px)",
-                        }}
-                      >
-                        {ms.emoji}
-                      </span>
+                      {ms.logo ? (
+                        <span className="journey-logo-shell">
+                          <img src={ms.logo} alt={`${ms.title} logo`} className="journey-logo" />
+                        </span>
+                      ) : (
+                        <span
+                          style={{
+                            fontSize: "16px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            transform: "translateY(-1px)",
+                          }}
+                        >
+                          {ms.emoji}
+                        </span>
+                      )}
                       <span
                         className="journey-card-year"
                         style={{
