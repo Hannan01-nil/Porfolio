@@ -1,0 +1,17 @@
+{
+  "firstName": "Mohammed",
+  "lastName": "Hannan N",
+  "name": "Mohamed Hannan N",
+  "role": "Full Stack Developer",
+  "avatar": "/images/hannan.jpg",
+  "email": "mohamedhannan01@gmail.com",
+  "location": "Asia/Kolkata",
+  "languages": [
+    "English",
+    "Tamil",
+    "Hindi",
+    "Urdu"
+  ],
+  "locationLabel": "Vaniyambadi, Tamil Nadu, India",
+  "phone": "+91 9365801662"
+}

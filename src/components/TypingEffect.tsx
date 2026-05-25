@@ -36,7 +36,7 @@ export function TypingEffect({ titles }: { titles: string[] }) {
   }, [text, isDeleting, loopNum, typingSpeed, titles]);
 
   return (
-    <span style={{ position: "relative", display: "inline-flex", whiteSpace: "pre-wrap" }}>
+    <span style={{ position: "relative", display: "inline-flex", whiteSpace: "nowrap", maxWidth: "100%", overflow: "hidden" }}>
       <span style={{ color: "#ffffff", fontWeight: 700 }}>{text}</span>
       <span className="blinking-cursor">|</span>
     </span>

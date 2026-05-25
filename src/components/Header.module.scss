@@ -6,7 +6,6 @@
 
 .position {
     z-index: 99999 !important;
-    /* Fully transparent — pill-nav is the only visual element */
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -29,14 +28,12 @@
     position: relative;
     transform: translateZ(0);
     
-    /* Magic UI Glow Aura + Inner Light Streak */
     box-shadow: 
         0 15px 40px -10px rgba(0, 0, 0, 0.5),
         0 0 20px rgba(168, 85, 247, 0.04),
         0 0 25px rgba(34, 211, 238, 0.04),
         inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
         
-    /* Load animation */
     animation: magicNavEntrance 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
     animation-delay: 0.1s;
 }
@@ -67,11 +64,11 @@
     padding: 12px 28px !important;
     margin: 0 4px !important;
     border-radius: 999px !important;
-    color: rgba(255, 255, 255, 0.7) !important; /* Higher opacity white */
+    color: rgba(255, 255, 255, 0.7) !important;
     gap: 12px !important;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
-    font-weight: 500 !important; /* Stronger weight */
-    font-size: 15px !important; /* Slightly larger */
+    font-weight: 500 !important;
+    font-size: 15px !important;
     letter-spacing: -0.01em !important;
 }
 
@@ -87,7 +84,7 @@
 :global(.pill-nav button img),
 :global(.pill-nav a i),
 :global(.pill-nav a img) {
-    filter: brightness(1.1) !important; /* Stronger icons by default */
+    filter: brightness(1.1) !important;
     opacity: 0.85 !important;
 }
 
@@ -99,13 +96,13 @@
     opacity: 1 !important;
 }
 
-/* Active Page State - Magic UI Silver/Glass look */
+/* Active Page State */
 :global(.pill-nav [aria-selected="true"]),
 :global(.pill-nav [data-selected="true"]),
 :global(.pill-nav .selected) {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%) !important;
     color: #fff !important;
-    font-weight: 600 !important; /* Boldest weight for active */
+    font-weight: 600 !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow: 
         0 4px 15px rgba(0, 0, 0, 0.3),
@@ -144,13 +141,14 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* MOBILE — pill floats at bottom                                       */
+/* MOBILE — pill floats at bottom with safe-area support                */
 /* ------------------------------------------------------------------ */
 
 @media (max-width: breakpoints.$s) {
     .position {
-        top: auto;
+        top: auto !important;
         bottom: var(--static-space-24);
+        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     }
 
     .mask {
@@ -160,51 +158,47 @@
 
     :global(.pill-nav) {
         padding: 6px !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.5),
+            inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+        animation-name: magicNavEntranceMobile;
+    }
+
+    @keyframes magicNavEntranceMobile {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     }
 
     :global(.pill-nav button),
     :global(.pill-nav a) {
-        padding: 10px 16px !important;
+        padding: 10px 14px !important;
         margin: 0 1px !important;
+        font-size: 13px !important;
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
 
-/* ------------------------------------------------------------------ */
-/* FADE MASK — bottom gradient, mobile only                             */
-/* ------------------------------------------------------------------ */
-
-.mask {
-    pointer-events: none;
-    backdrop-filter: blur(0.5rem);
-    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
-    mask-image: linear-gradient(rgba(0, 0, 0) 25%, rgba(0, 0, 0, 0) 100%);
-    mask-size: 100% 100%;
-}
-
-/* ------------------------------------------------------------------ */
-/* MOBILE — pill floats at bottom                                       */
-/* ------------------------------------------------------------------ */
-
-@media (max-width: breakpoints.$s) {
-    .position {
-        top: auto;
-        bottom: var(--static-space-24);
-    }
-
-    .mask {
-        transform: rotate(180deg);
-        bottom: 0;
+/* Extra small phones */
+@media (max-width: 380px) {
+    :global(.pill-nav button),
+    :global(.pill-nav a) {
+        padding: 8px 10px !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        gap: 6px !important;
     }
 
     :global(.pill-nav) {
-        box-shadow: var(--card-shadow) !important;
-        padding: 6px !important;
-    }
-
-    :global(.pill-nav button),
-    :global(.pill-nav a) {
-        padding: 10px 16px !important;
-        margin: 0 1px !important;
+        padding: 4px !important;
     }
 }

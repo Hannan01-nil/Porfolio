@@ -1,5 +1,5 @@
 import { TypingEffect } from "@/components/TypingEffect";
-import { baseURL, home, person, social } from "@/resources";
+import { baseURL, home, homeRotatingSubtitles, person, social } from "@/resources";
 import { Button, Column, Heading, Meta, RevealFx, Row, Schema, Text } from "@once-ui-system/core";
 import Image from "next/image";
 import React from "react";
@@ -13,17 +13,6 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
-
-const rotatingTitles = [
-  "BCA Student @ VIT Vellore",
-  "Full Stack Developer",
-  "Web Developer",
-  "Software Developer",
-  "Machine Learning Enthusiast",
-  "AI/ML Explorer",
-  "Backend Learner",
-  "Future Engineer",
-];
 
 export default function Home() {
   return (
@@ -51,14 +40,14 @@ export default function Home() {
         vertical="center"
         style={{
           minHeight: "100svh",
-          padding: "32px 24px 24px",
+          padding: "clamp(16px, 4vw, 32px) clamp(16px, 4vw, 24px) clamp(80px, 12vw, 24px)",
           justifyContent: "center",
           transform: "translateY(-80px)",
         }}
         s={{
           transform: "none",
           minHeight: "100svh",
-          padding: "16px 16px",
+          padding: "16px 16px 100px",
           justifyContent: "center",
         }}
         gap="24"
@@ -68,8 +57,8 @@ export default function Home() {
             className="floating-avatar"
             style={{
               overflow: "hidden",
-              width: 240,
-              height: 240,
+              width: "clamp(150px, 25vw, 240px)",
+              height: "clamp(150px, 25vw, 240px)",
               borderRadius: "50%",
               background: "var(--magic-glass-bg)",
               display: "flex",
@@ -80,8 +69,8 @@ export default function Home() {
           >
             <div
               style={{
-                width: 228,
-                height: 228,
+                width: "calc(100% - 12px)",
+                height: "calc(100% - 12px)",
                 borderRadius: "50%",
                 overflow: "hidden",
                 position: "relative",
@@ -106,10 +95,10 @@ export default function Home() {
             align="center"
             variant="display-strong-xs"
             style={{
-              fontSize: "clamp(3rem, 8vw, 6rem)",
+              fontSize: "clamp(1.75rem, 7vw, 6rem)",
               letterSpacing: "-0.02em",
               fontWeight: 900,
-              marginTop: "24px",
+              marginTop: "clamp(12px, 3vw, 24px)",
               lineHeight: 1.1,
               paddingBottom: "0.1em",
             }}
@@ -121,22 +110,27 @@ export default function Home() {
         <RevealFx translateY="8" delay={0.3} horizontal="center">
           <div
             style={{
-              minHeight: "60px",
+              minHeight: "clamp(40px, 6vw, 60px)",
               display: "flex",
               alignItems: "flex-start",
               justifyContent: "center",
+              maxWidth: "100%",
+              overflow: "hidden",
             }}
           >
             <Heading
               align="center"
               variant="heading-strong-xl"
               style={{
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                fontSize: "clamp(0.95rem, 3vw, 2.5rem)",
                 fontWeight: 500,
                 color: "var(--text-primary)",
+                maxWidth: "100%",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
-              <TypingEffect titles={rotatingTitles} />
+              <TypingEffect titles={homeRotatingSubtitles} />
             </Heading>
           </div>
         </RevealFx>
@@ -150,8 +144,8 @@ export default function Home() {
         horizontal="center"
         paddingY="80"
         gap="64"
-        style={{ padding: "40px 24px 120px" }}
-        s={{ gap: "40", padding: "40px 16px 100px" }}
+        style={{ padding: "clamp(24px, 5vw, 40px) clamp(16px, 4vw, 24px) clamp(80px, 14vw, 120px)" }}
+        s={{ gap: "40", padding: "24px 16px 100px" }}
       >
         {/* INTRO BLOCK */}
         <RevealFx translateY="8" delay={0.1} fillWidth horizontal="center">

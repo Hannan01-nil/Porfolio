@@ -1,111 +1,82 @@
 import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Text } from "@once-ui-system/core";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
-const locationLabel = "Vaniyambadi, Tamil Nadu, India";
-const phone = "+91 9365801662";
+import personData from "@/data/person.json";
+import socialData from "@/data/social.json";
+import homeData from "@/data/home.json";
+import aboutData from "@/data/about.json";
+import skillsData from "@/data/skills.json";
+import blogData from "@/data/blog.json";
+import workData from "@/data/work.json";
+import galleryData from "@/data/gallery.json";
+import contactData from "@/data/contact.json";
+import resumeData from "@/data/resume.json";
+import newsletterData from "@/data/newsletter.json";
+
+const locationLabel = personData.locationLabel;
+const phone = personData.phone;
 
 const resume = {
-  path: "/resume",
-  label: "Resume",
-  title: "Resume",
-  description:
-    "Academic profile, skills, and project-focused experience. Download the latest PDF version of my resume.",
+  path: resumeData.path,
+  label: resumeData.label,
+  title: resumeData.title,
+  description: resumeData.description,
 };
 
 const contact = {
-  path: "/contact",
-  label: "Contact",
-  title: "Contact",
-  description: "Feel free to connect anytime. I am usually quick to respond.",
+  path: contactData.path,
+  label: contactData.label,
+  title: contactData.title,
+  description: contactData.description,
 };
 
 const person: Person = {
-  firstName: "Mohamed",
-  lastName: "Hannan N",
-  name: "Mohamed Hannan N",
-  role: "Full Stack Developer",
-  avatar: "/images/hannan.jpg",
-  email: "mohamedhannan01@gmail.com",
-  location: "Asia/Kolkata",
-  languages: ["English", "Tamil", "Hindi", "Urdu"],
+  firstName: personData.firstName,
+  lastName: personData.lastName,
+  name: personData.name,
+  role: personData.role,
+  avatar: personData.avatar,
+  email: personData.email,
+  location: personData.location as Person["location"],
+  languages: personData.languages,
 };
 
 const newsletter: Newsletter = {
-  display: false,
-  title: <>Stay in the loop</>,
-  description: <>Updates are currently disabled.</>,
+  display: newsletterData.display,
+  title: <MarkdownRenderer content={newsletterData.title} />,
+  description: <MarkdownRenderer content={newsletterData.description} />,
 };
 
-const social: Social = [
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/Hannan01-nil",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/in/mohamed-hannan-9703763a0/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/md_hannan_0001",
-    essential: true,
-  },
-  {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
-    essential: true,
-  },
-];
+const social: Social = socialData.map((s: { name: string; icon: string; link: string; essential?: boolean }) => ({
+  name: s.name,
+  icon: s.icon as Social[number]["icon"],
+  link: s.link,
+  essential: s.essential,
+}));
 
 const home: Home = {
-  path: "/",
-  image: "/images/og/home.jpg",
-  label: "Home",
-  title: "Mohamed Hannan N | Software Portfolio",
-  description:
-    "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
-  headline: <>Mohamed Hannan N</>,
+  path: homeData.path as Home["path"],
+  image: homeData.image as Home["image"],
+  label: homeData.label,
+  title: homeData.title,
+  description: homeData.description,
+  headline: <MarkdownRenderer content={homeData.headline} />,
   featured: {
-    display: true,
-    title: <>Open to Opportunities</>,
-    href: "/contact",
+    display: homeData.featured.display,
+    title: <MarkdownRenderer content={homeData.featured.title} />,
+    href: homeData.featured.href,
   },
-  subline: (
-    <>
-      Motivated BCA student passionate about software, AI tools, modern development and building
-      real-world solutions.
-    </>
-  ),
+  subline: <MarkdownRenderer content={homeData.subline} />,
 };
 
-const homeRotatingSubtitles = [
-  "Full Stack Developer",
-  "Web Developer",
-  "Software Developer",
-  "AI/ML Engineer",
-  "Problem Solver",
-  "Tech Enthusiast",
-];
-
-const homeBadges = [
-  "Based in Vaniyambadi",
-  "Open to Opportunities",
-  "Fast Learner",
-  "Creative Thinker",
-];
+const homeRotatingSubtitles: string[] = homeData.rotatingTitles;
+const homeBadges: string[] = homeData.badges;
 
 const about: About = {
-  path: "/about",
-  label: "About",
-  title: "About",
-  description:
-    "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools.",
+  path: aboutData.path as About["path"],
+  label: aboutData.label,
+  title: aboutData.title,
+  description: aboutData.description,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -118,168 +89,62 @@ const about: About = {
     link: "",
   },
   intro: {
-    display: true,
-    title: "About Me",
-    description: (
-      <>
-        <Text as="p" variant="body-default-l" marginBottom="16">
-          I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development,
-          web technologies, machine learning, and modern tools. I enjoy learning fast, building
-          useful projects, and continuously improving my technical skills.
-        </Text>
-      </>
-    ),
+    display: aboutData.intro.display,
+    title: aboutData.intro.title,
+    description: <MarkdownRenderer content={aboutData.intro.description} />,
   },
   work: {
-    display: false,
-    title: "Experience",
+    display: aboutData.work.display,
+    title: aboutData.work.title,
     experiences: [],
   },
   studies: {
-    display: true,
-    title: "Education",
-    institutions: [
-      {
-        name: "Vellore Institute of Technology (VIT)",
-        description: (
-          <>
-            Bachelor of Computer Applications (BCA) <br /> 2024 - 2027 <br /> CGPA: 8.91
-          </>
-        ),
-      },
-      {
-        name: "Islamiah Boys Higher Secondary School",
-        description: (
-          <>
-            Completed 2023 <br /> 12th Grade: 88% <br /> 10th Grade: 79%
-          </>
-        ),
-      },
-    ],
+    display: aboutData.studies.display,
+    title: aboutData.studies.title,
+    institutions: aboutData.studies.institutions.map((inst: { name: string; description: string }) => ({
+      name: inst.name,
+      description: <MarkdownRenderer content={inst.description} />,
+    })),
   },
   technical: {
     display: true,
     title: "Technical Skills",
-    skills: [
-      {
-        title: "Programming",
-        description: <>Python, Java, C, C++, JavaScript, PHP</>,
-        tags: [
-          { name: "Python" },
-          { name: "Java" },
-          { name: "C" },
-          { name: "C++" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "PHP" },
-        ],
-      },
-      {
-        title: "Frontend",
-        description: <>HTML, CSS, React.js, Next.js, Tailwind</>,
-        tags: [
-          { name: "HTML" },
-          { name: "CSS" },
-          { name: "React.js" },
-          { name: "Next.js", icon: "nextjs" },
-          { name: "Tailwind" },
-        ],
-      },
-      {
-        title: "Backend",
-        description: <>Node.js, Express.js, Flask</>,
-        tags: [{ name: "Node.js" }, { name: "Express.js" }, { name: "Flask" }],
-      },
-      {
-        title: "Database",
-        description: <>MySQL, MongoDB, SQL, DBMS</>,
-        tags: [{ name: "MySQL" }, { name: "MongoDB" }, { name: "SQL" }, { name: "DBMS" }],
-      },
-      {
-        title: "Machine Learning",
-        description: <>Scikit-learn, Pandas, NumPy, Matplotlib, XGBoost</>,
-        tags: [
-          { name: "Scikit-learn" },
-          { name: "Pandas" },
-          { name: "NumPy" },
-          { name: "Matplotlib" },
-          { name: "XGBoost" },
-        ],
-      },
-      {
-        title: "Tools",
-        description: <>Git, GitHub, VS Code, Postman, Colab, Canva, Figma</>,
-        tags: [
-          { name: "Git" },
-          { name: "GitHub", icon: "github" },
-          { name: "VS Code" },
-          { name: "Postman" },
-          { name: "Colab" },
-          { name: "Canva" },
-          { name: "Figma" },
-          { name: "Antigravity" },
-        ],
-      },
-      {
-        title: "Concepts",
-        description: <>OOP, DSA, REST APIs, Problem Solving</>,
-        tags: [
-          { name: "OOP" },
-          { name: "DSA" },
-          { name: "REST APIs" },
-          { name: "Problem Solving" },
-        ],
-      },
-    ],
+    skills: skillsData.map((skill: { title: string; description?: string; tags?: { name: string; icon?: string }[] }) => ({
+      title: skill.title,
+      description: skill.description ? <MarkdownRenderer content={skill.description} /> : undefined,
+      tags: skill.tags,
+    })),
   },
 };
 
-const aboutTimeline = [
-  { year: "2024", text: "Started BCA journey at VIT" },
-  { year: "2025", text: "Built Track My Train project" },
-  { year: "2025", text: "Strengthened coding, DBMS and development skills" },
-  { year: "2025-2026", text: "Completed HCI full case study with low/high fidelity wireframes" },
-  { year: "2026", text: "Built Stress Prediction (Streeiq) project" },
-  { year: "2026", text: "Built Smart Attendance System IoT project" },
-  { year: "NOW", text: "Exploring AI/ML, modern development, advanced tools" },
-  {
-    year: "FUTURE",
-    text: "Becoming a skilled Software / AI / ML engineer and building impactful products",
-  },
-];
+const aboutTimeline = aboutData.timeline.map(
+  (t: { year: string; text: string }) => ({ year: t.year, text: t.text }),
+);
 
-const aboutCreative = [
-  "Photography",
-  "Videography",
-  "Video Editing",
-  "Creative Framing",
-  "Content Creation",
-];
-
-// Empty learning/tools because it's merged or unnecessary based on latest requirements
-// but we keep exports to prevent TS errors in unmodified downstream pages, just in case.
+const aboutCreative: string[] = aboutData.creative;
 const aboutLearning: string[] = [];
 const aboutTools: string[] = [];
 
 const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Blog",
-  description: "Articles and notes.",
+  path: blogData.path as Blog["path"],
+  label: blogData.label,
+  title: blogData.title,
+  description: blogData.description,
 };
 
 const work: Work = {
-  path: "/work",
-  label: "Projects",
-  title: "Projects",
-  description: "Selected software and machine learning projects.",
+  path: workData.path as Work["path"],
+  label: workData.label,
+  title: workData.title,
+  description: workData.description,
 };
 
 const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: "Gallery",
-  description: "Gallery.",
-  images: [],
+  path: galleryData.path as Gallery["path"],
+  label: galleryData.label,
+  title: galleryData.title,
+  description: galleryData.description,
+  images: galleryData.images,
 };
 
 export {

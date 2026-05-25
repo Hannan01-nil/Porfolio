@@ -20,7 +20,7 @@ export default function Resume() {
       paddingY="48"
       gap="48"
       horizontal="center"
-      style={{ position: "relative" }}
+      style={{ position: "relative", paddingBottom: "clamp(60px, 12vw, 120px)" }}
     >
       <Schema
         as="webPage"
@@ -61,8 +61,8 @@ export default function Resume() {
         style={{
           position: "relative",
           zIndex: 1,
-          paddingTop: "64px",
-          paddingBottom: "40px",
+          paddingTop: "clamp(24px, 8vw, 64px)",
+          paddingBottom: "clamp(24px, 5vw, 40px)",
         }}
       >
         <Column horizontal="center" gap="16" style={{ textAlign: "center" }}>
@@ -78,7 +78,7 @@ export default function Resume() {
                 letterSpacing: "-0.03em",
                 textAlign: "center",
                 margin: 0,
-                fontSize: "clamp(64px, 10vw, 88px)",
+                fontSize: "clamp(2.5rem, 10vw, 5.5rem)",
                 fontWeight: 900,
                 lineHeight: "1",
               }}

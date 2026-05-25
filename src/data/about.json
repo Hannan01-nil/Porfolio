@@ -1,0 +1,46 @@
+{
+  "path": "/about",
+  "label": "About",
+  "title": "About",
+  "description": "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools.",
+  "intro": {
+    "display": true,
+    "title": "About Me",
+    "description": "I am Mohamed Hannan N, a BCA student at VIT with strong interest in software development, web technologies, machine learning, and modern tools. I enjoy learning fast, building useful projects, and continuously improving my technical skills."
+  },
+  "work": {
+    "display": false,
+    "title": "Experience"
+  },
+  "studies": {
+    "display": true,
+    "title": "Education",
+    "institutions": [
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "description": "Bachelor of Computer Applications (BCA)\n2024 - 2027\nCGPA: 8.91"
+      },
+      {
+        "name": "Islamiah Boys Higher Secondary School",
+        "description": "Completed 2023\n12th Grade: 88%\n10th Grade: 79%"
+      }
+    ]
+  },
+  "timeline": [
+    { "year": "2024", "text": "Started BCA journey at VIT" },
+    { "year": "2025", "text": "Built Track My Train project" },
+    { "year": "2025", "text": "Strengthened coding, DBMS and development skills" },
+    { "year": "2025-2026", "text": "Completed HCI full case study with low/high fidelity wireframes" },
+    { "year": "2026", "text": "Built Stress Prediction (Streeiq) project" },
+    { "year": "2026", "text": "Built Smart Attendance System IoT project" },
+    { "year": "NOW", "text": "Exploring AI/ML, modern development, advanced tools" },
+    { "year": "FUTURE", "text": "Becoming a skilled Software / AI / ML engineer and building impactful products" }
+  ],
+  "creative": [
+    "Photography",
+    "Videography",
+    "Video Editing",
+    "Creative Framing",
+    "Content Creation"
+  ]
+}

@@ -13,7 +13,7 @@ export default function Contact() {
       style={{
         position: "relative",
         minHeight: "80vh",
-        padding: "48px 24px 120px",
+        padding: "clamp(24px, 5vw, 48px) clamp(16px, 4vw, 24px) clamp(100px, 14vw, 120px)",
         background: "transparent",
         zIndex: 1,
       }}

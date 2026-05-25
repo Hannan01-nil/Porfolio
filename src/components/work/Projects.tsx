@@ -1,5 +1,5 @@
 import { ProjectCard } from "@/components";
-import { getPosts } from "@/utils/utils";
+import projectsData from "@/data/projects.json";
 import { Column } from "@once-ui-system/core";
 
 interface ProjectsProps {
@@ -8,15 +8,14 @@ interface ProjectsProps {
 }
 
 export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+  let allProjects = [...projectsData];
 
-  // Exclude by slug (exact match)
   if ((exclude?.length ?? 0) > 0) {
     allProjects = allProjects.filter((post) => !(exclude ?? []).includes(post.slug));
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
   });
 
   const displayedProjects = range
@@ -27,11 +26,11 @@ export function Projects({ range, exclude }: ProjectsProps) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
-        gap: "40px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
+        gap: "clamp(24px, 4vw, 40px)",
         width: "100%",
-        marginBottom: "80px",
-        padding: "0 24px",
+        marginBottom: "clamp(40px, 8vw, 80px)",
+        padding: "0 clamp(12px, 3vw, 24px)",
       }}
     >
       {displayedProjects.map((post, index) => (
@@ -47,28 +46,18 @@ export function Projects({ range, exclude }: ProjectsProps) {
             priority={index < 2}
             key={post.slug}
             href={`/work/${post.slug}`}
-            images={post.metadata.images}
-            title={post.metadata.title}
-            description={post.metadata.summary}
-            content={post.content}
-            link={post.metadata.link || ""}
-            tag={post.metadata.tag}
-            extraLinks={post.metadata.extraLinks}
-            readMoreLink={post.metadata.readMoreLink}
+            images={post.images}
+            title={post.title}
+            description={post.summary}
+            content={post.body}
+            link={post.link || ""}
+            tag={post.tag}
+            extraLinks={post.extraLinks}
+            readMoreLink={undefined}
             reportLink={
-              post.metadata.title === "AI-Based Smart Attendance System - IoT"
-                ? "/images/Attendance_System_IoT/AI_Smart_Attendance_System_Report.pdf"
-                : post.metadata.title === "Student Stress Prediction System - Stressiq"
-                  ? "/images/Stress_Prediction/stressiq-report.pdf"
-                  : post.metadata.title === "HCI Case Study Project - Where Is My Train"
-                    ? "/images/HCI/HCI_CaseStudy-1.pdf"
-                    : undefined
+              post.reportLink || undefined
             }
-            reportLabel={
-              post.metadata.title === "HCI Case Study Project - Where Is My Train"
-                ? "Case Study Report"
-                : "Project Report"
-            }
+            reportLabel="Project Report"
           />
         </div>
       ))}

@@ -123,16 +123,16 @@ export const SkillsSection = ({
     <Column
       fillWidth
       horizontal="center"
-      paddingTop="160"
-      paddingBottom="80"
+      paddingTop="80"
+      paddingBottom="40"
       className="skills-glow-container"
       style={{
         position: "relative",
         zIndex: 10,
         overflow: "visible",
-        marginBottom: "80px",
-        paddingLeft: "24px",
-        paddingRight: "24px",
+        marginBottom: "clamp(40px, 8vw, 80px)",
+        paddingLeft: "clamp(12px, 3vw, 24px)",
+        paddingRight: "clamp(12px, 3vw, 24px)",
       }}
     >
       <div ref={containerRef} style={{ position: "absolute", inset: 0, zIndex: 0 }} />
@@ -142,8 +142,8 @@ export const SkillsSection = ({
       <div
         style={{
           maxWidth: "1280px",
-          margin: "0 auto 80px",
-          padding: "0 24px",
+          margin: "0 auto clamp(40px, 8vw, 80px)",
+          padding: "0 clamp(12px, 3vw, 24px)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -211,7 +211,7 @@ export const SkillsSection = ({
             key={category.title}
             translateY="40"
             delay={idx * 0.08}
-            style={{ width: "320px" }}
+            style={{ width: "min(100%, 320px)" }}
           >
             <div className="skill-category-card" style={{ width: "100%" }}>
               <Row horizontal="between" vertical="center" marginBottom="20">

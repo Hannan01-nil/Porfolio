@@ -49,7 +49,7 @@ export default function Work() {
         vertical="center"
         style={{
           minHeight: "45svh",
-          padding: "105px 24px 70px",
+          padding: "clamp(60px, 12vw, 105px) clamp(16px, 4vw, 24px) clamp(40px, 8vw, 70px)",
           justifyContent: "center",
           position: "relative",
           zIndex: 1,
@@ -106,7 +106,7 @@ export default function Work() {
         maxWidth="xl"
         fillWidth
         horizontal="center"
-        style={{ position: "relative", zIndex: 1, paddingBottom: "160px" }}
+        style={{ position: "relative", zIndex: 1, paddingBottom: "clamp(80px, 16vw, 160px)" }}
       >
         <RevealFx translateY="16" delay={0.4} speed="fast">
           <Projects />

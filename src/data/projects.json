@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "track-my-train",
+    "title": "Track My Train",
+    "publishedAt": "2025-05-18",
+    "summary": "Smart railway management and train tracking system built using Python, MySQL, and DBMS concepts.",
+    "images": [
+      "/images/TrackMyTrain/Train1.png",
+      "/images/TrackMyTrain/Train2.png",
+      "/images/TrackMyTrain/Train3.png",
+      "/images/TrackMyTrain/Train4.png"
+    ],
+    "team": [
+      {
+        "name": "Mohamed Hannan",
+        "role": "Developer",
+        "avatar": "/images/hannan.jpg",
+        "linkedIn": "https://www.linkedin.com/in/mohamed-hannan-9703763a0/"
+      }
+    ],
+    "link": "https://github.com/rayaan-24/TrackMy-Train",
+    "tag": "Group Project",
+    "extraLinks": [],
+    "reportLink": "",
+    "body": "## Overview\n\nTrack My Train is a train route management and railway information system designed to simplify train search, route management, schedules, and passenger utility features. The system provides an efficient interface for accessing train-related data with structured database management and user-friendly workflows.\n\n[View Code](https://github.com/rayaan-24/TrackMy-Train) | [Read Case Study](#case-study)\n\n## Project Snapshot\n\n- **Project tagline:** Smart railway management and train tracking system built using Python + DBMS concepts.\n- **Project type:** Academic DBMS-focused railway information system.\n- **Primary focus:** Train lookup, route management, schedules, and structured passenger utility workflows.\n\n## Key Features\n\n- **Search Train by Name or Number** for faster route discovery.\n- **Search Railway Stations** using organized station records.\n- **Trains Between Stations** workflow for route-based lookup.\n- **Live Train Status** concept inspired by real railway information systems.\n- **Train Schedule** viewing for structured timing access.\n- **Route Management** for organizing train paths and travel flow.\n- **Seat Availability Concept** for future booking-oriented expansion.\n- **Fare Information Concept** for practical passenger utility planning.\n- **Clean Dashboard Interface** inspired by user-friendly railway tools.\n- **Structured Database Records** backed by relational DBMS design.\n- **Responsive UI Concept** aligned with accessible railway information screens.\n\n## Tech Stack\n\n- **Python** for backend application logic.\n- **MySQL** for relational data storage.\n- **DBMS** concepts for schema design, constraints, and retrieval logic.\n- **HTML/CSS** for the project interface layer.\n- **JavaScript** for client-side interaction.\n\n## Project Highlights\n\n- Built using DBMS concepts for academic railway system design.\n- Organized train routes and schedules efficiently for easy lookup.\n- Designed user-friendly train search workflows around common passenger needs.\n- Demonstrates real-world transport management logic in a student project format.\n- Structured data storage and retrieval with practical relational modeling.\n- Scalable for future live API integration without changing the core system concept.\n\n## System Scope\n\nThis project draws inspiration from modern railway information systems and adapts those ideas into a structured academic implementation. Core workflows such as searching trains, handling schedules, organizing stations, and presenting route information are grounded in DBMS design, while broader passenger features like live status, seat availability, and fare visibility are treated as realistic product concepts that the system can grow into.\n\n## Case Study\n\nThis project was created to demonstrate how railway systems can be digitally managed using structured databases and intuitive user interfaces. It focuses on simplifying route lookup, schedules, and train discovery while applying real-world DBMS concepts.\n\n## Outcome\n\nTrack My Train strengthened my understanding of relational modeling, workflow-driven application design, and how database-backed systems can support real transport use cases. It also shows how an academic DBMS project can be shaped into a scalable product foundation for smarter railway utilities."
+  },
+  {
+    "slug": "student-stress-prediction-system",
+    "title": "Student Stress Prediction System - Stressiq",
+    "publishedAt": "2025-10-04",
+    "summary": "Machine learning system to predict student stress using academic and lifestyle factors.",
+    "images": [
+      "/images/Stress_Prediction/pg1.png",
+      "/images/Stress_Prediction/pg2.png",
+      "/images/Stress_Prediction/pg3.png",
+      "/images/Stress_Prediction/pg4.png",
+      "/images/Stress_Prediction/pg5.png",
+      "/images/Stress_Prediction/pg6.png",
+      "/images/Stress_Prediction/pg7.png"
+    ],
+    "team": [
+      {
+        "name": "Mohamed Hannan",
+        "role": "Developer",
+        "avatar": "/images/hannan.jpg",
+        "linkedIn": "https://www.linkedin.com/in/mohamed-hannan-9703763a0/"
+      }
+    ],
+    "link": "https://github.com/saad-affan12/student-stress-prediction",
+    "tag": "Group Project",
+    "extraLinks": [],
+    "reportLink": "/images/Stress_Prediction/stressiq-report.pdf",
+    "body": "## Overview\n\nStudent Stress Prediction System is a machine learning project designed to estimate stress levels from academic and lifestyle signals. The goal was to build a model pipeline that could compare multiple algorithms, identify useful patterns, and present findings clearly.\n\n## Key Features\n\n- **Logistic Regression** baseline for interpretable classification.\n- **Random Forest** for stronger nonlinear modeling.\n- **PCA** for dimensionality reduction and feature analysis.\n- **XGBoost** for high-performing predictive modeling.\n- **85% accuracy** achieved during evaluation.\n\n## Tech Stack\n\n- **Python** for model development and experimentation.\n- **Scikit-learn** for preprocessing, model training, and evaluation.\n- **XGBoost** for boosted ensemble prediction.\n- **Pandas** and **NumPy** for dataset preparation.\n- **Matplotlib** for visual analysis.\n\n## Build Focus\n\nI focused on preparing the dataset carefully, comparing algorithms fairly, and understanding which combinations of features contributed most to the final prediction quality. The project helped me build stronger intuition around preprocessing, evaluation, and model comparison.\n\n## Outcome\n\nThis system reflects my growing interest in machine learning applied to real-world educational problems. It gave me hands-on experience with end-to-end model experimentation, accuracy tracking, and communicating results in a practical format."
+  },
+  {
+    "slug": "hci-case-study",
+    "title": "HCI Case Study Project - Where Is My Train",
+    "publishedAt": "2025-10-15",
+    "summary": "A comprehensive Human-Computer Interaction case study featuring low-fidelity and high-fidelity wireframes, focusing on user-centered design and usability.",
+    "images": [
+      "/images/HCI/wireframe.png"
+    ],
+    "team": [
+      {
+        "name": "Mohamed Hannan",
+        "role": "UI/UX Designer",
+        "avatar": "/images/hannan.jpg",
+        "linkedIn": ""
+      }
+    ],
+    "link": "https://www.figma.com/design/C6LzHKPmF9T0fmtnlIqxRJ/Where-is-my-Train?node-id=0-1&t=1SGbpauAQP9PdZuE-1",
+    "tag": "Individual Project",
+    "extraLinks": [],
+    "reportLink": "/images/HCI/HCI_CaseStudy-1.pdf",
+    "body": "## Overview\n\nThis project is a detailed Human-Computer Interaction (HCI) case study that emphasizes user-centered design processes. It demonstrates the complete lifecycle of interface design, starting from raw ideation and low-fidelity sketching, through to the creation of interactive, high-fidelity prototypes.\n\n## Process and Methodology\n\n- **User Research:** Identifying pain points and building empathy with the target audience.\n- **Low-Fidelity Wireframes:** Rapid sketching to establish the foundational layout and user flow without getting bogged down by aesthetic details.\n- **High-Fidelity Prototypes:** Implementing visual design principles, typography, and interactive modern components to simulate the final product.\n- **Usability Testing:** Evaluating the designs with real users to refine the experience.\n\n## Tech Stack & Tools\n\n- **Design:** Figma, Canva\n- **Concepts:** HCI Principles, Usability Heuristics, User-Centered Design (UCD)\n\nThis case study sharpened my ability to think from the user's perspective while balancing functional requirements with aesthetic appeal, proving that a great product is built on a foundation of empathy and iteration."
+  },
+  {
+    "slug": "ai-based-smart-attendance-system",
+    "title": "AI-Based Smart Attendance System - IoT",
+    "publishedAt": "2026-02-10",
+    "summary": "Smart attendance platform using face recognition, ESP32-CAM, and Flask for real-time automated attendance.",
+    "images": [
+      "/images/Attendance_System_IoT/IoT1.jpg",
+      "/images/Attendance_System_IoT/IoT2.jpg",
+      "/images/Attendance_System_IoT/IoT3.jpg",
+      "/images/Attendance_System_IoT/IoT4.jpg",
+      "/images/Attendance_System_IoT/IoT5.jpg",
+      "/images/Attendance_System_IoT/Attendance_dashboard.jpg"
+    ],
+    "team": [
+      {
+        "name": "Mohamed Hannan",
+        "role": "Developer",
+        "avatar": "/images/hannan.jpg",
+        "linkedIn": "https://www.linkedin.com/in/mohamed-hannan-9703763a0/"
+      }
+    ],
+    "link": "https://github.com/Hannan01-nil/Smart-AI-Attendance-System-IoT",
+    "tag": "Individual Project",
+    "extraLinks": [],
+    "reportLink": "/images/Attendance_System_IoT/AI_Smart_Attendance_System_Report.pdf",
+    "body": "## Overview\n\nAI-Based Smart Attendance System is a real-time attendance platform built to automate student check-ins using face recognition and a live ESP32-CAM feed. The project combines computer vision with a lightweight web dashboard to make attendance faster, more reliable, and easier to review.\n\n## Key Features\n\n- **Face recognition attendance** for automated identity matching.\n- **Live camera feed** powered by ESP32-CAM for continuous capture.\n- **Present and late marking** based on attendance timing logic.\n- **Excel report generation** for practical record export.\n- **Real-time dashboard** for monitoring attendance status as data updates.\n\n## Tech Stack\n\n- **Python** for the main application logic.\n- **Flask** for the backend and dashboard integration.\n- **OpenCV** for image processing and face recognition workflows.\n- **ESP32-CAM** for live image capture.\n- **Pandas** for attendance processing and Excel exports.\n- **JavaScript** for interactive dashboard behavior.\n\n## Build Focus\n\nThe main focus of this project was reliability in real classroom usage. I worked on handling the live stream, matching recognized faces against student records, and transforming captured events into useful attendance logs that could be reviewed instantly or exported later.\n\n## Outcome\n\nThis project demonstrates my interest in combining hardware, backend systems, and applied AI to solve practical problems. It also strengthened my skills in integrating real-time input, data processing, and usable admin workflows."
+  }
+]

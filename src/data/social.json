@@ -1,0 +1,26 @@
+[
+  {
+    "name": "GitHub",
+    "icon": "github",
+    "link": "https://github.com/Hannan01-nil",
+    "essential": true
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "linkedin",
+    "link": "https://www.linkedin.com/in/mohamed-hannan-9703763a0/",
+    "essential": true
+  },
+  {
+    "name": "Instagram",
+    "icon": "instagram",
+    "link": "https://www.instagram.com/md_hannan_0001",
+    "essential": true
+  },
+  {
+    "name": "Email",
+    "icon": "email",
+    "link": "mailto:mohamedhannan01@gmail.com",
+    "essential": true
+  }
+]

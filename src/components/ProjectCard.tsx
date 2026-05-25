@@ -116,11 +116,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <SmartLink
             href={readMoreLink || href}
             className="project-pill-btn project-pill-btn-primary"
-            style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
+            style={{ justifyContent: "center", minHeight: "44px" }}
             {...(readMoreLink && { target: "_blank", rel: "noopener noreferrer" })}
           >
-            <Icon name="arrowRight" size="s" />
             Read More
+            <Icon name="arrowRight" size="s" />
           </SmartLink>
 
           {link && (
@@ -129,7 +129,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="project-pill-btn project-pill-btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
+              style={{ justifyContent: "center", minHeight: "44px" }}
             >
               <Icon name={link.includes("github") ? "github" : "arrowUpRightFromSquare"} size="s" />
               View Project
@@ -142,7 +142,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="project-pill-btn project-pill-btn-secondary report-btn pdf"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
+              style={{ justifyContent: "center", minHeight: "44px" }}
             >
               <Icon name="document" size="s" />
               {reportLabel || "Project Report"}
@@ -159,7 +159,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="project-pill-btn project-pill-btn-secondary"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ width: "100%", justifyContent: "center", minHeight: "44px" }}
+                style={{ justifyContent: "center", minHeight: "44px" }}
               >
                 <Icon
                   name={

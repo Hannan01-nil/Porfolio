@@ -1,0 +1,30 @@
+{
+  "path": "/",
+  "image": "/images/og/home.jpg",
+  "label": "Home",
+  "title": "Mohamed Hannan N | Software Portfolio",
+  "description": "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
+  "headline": "Mohamed Hannan N",
+  "featured": {
+    "display": true,
+    "title": "Open to Opportunities",
+    "href": "/contact"
+  },
+  "subline": "Motivated BCA student passionate about software, AI tools, modern development and building real-world solutions.",
+  "rotatingTitles": [
+    "BCA Student @ VIT Vellore",
+    "Full Stack Developer",
+    "Web Developer",
+    "Software Developer",
+    "Machine Learning Enthusiast",
+    "AI/ML Explorer",
+    "Backend Learner",
+    "Future Engineer"
+  ],
+  "badges": [
+    "Based in Vaniyambadi",
+    "Open to Opportunities",
+    "Fast Learner",
+    "Creative Thinker"
+  ]
+}

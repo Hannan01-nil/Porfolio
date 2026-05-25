@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Programming",
+    "description": "Python, Java, C, C++, JavaScript, PHP",
+    "tags": [
+      { "name": "Python" },
+      { "name": "Java" },
+      { "name": "C" },
+      { "name": "C++" },
+      { "name": "JavaScript", "icon": "javascript" },
+      { "name": "PHP" }
+    ]
+  },
+  {
+    "title": "Frontend",
+    "description": "HTML, CSS, React.js, Next.js, Tailwind",
+    "tags": [
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "React.js" },
+      { "name": "Next.js", "icon": "nextjs" },
+      { "name": "Tailwind" }
+    ]
+  },
+  {
+    "title": "Backend",
+    "description": "Node.js, Express.js, Flask",
+    "tags": [
+      { "name": "Node.js" },
+      { "name": "Express.js" },
+      { "name": "Flask" }
+    ]
+  },
+  {
+    "title": "Database",
+    "description": "MySQL, MongoDB, SQL, DBMS",
+    "tags": [
+      { "name": "MySQL" },
+      { "name": "MongoDB" },
+      { "name": "SQL" },
+      { "name": "DBMS" }
+    ]
+  },
+  {
+    "title": "Machine Learning",
+    "description": "Scikit-learn, Pandas, NumPy, Matplotlib, XGBoost",
+    "tags": [
+      { "name": "Scikit-learn" },
+      { "name": "Pandas" },
+      { "name": "NumPy" },
+      { "name": "Matplotlib" },
+      { "name": "XGBoost" }
+    ]
+  },
+  {
+    "title": "Tools",
+    "description": "Git, GitHub, VS Code, Postman, Colab, Canva, Figma",
+    "tags": [
+      { "name": "Git" },
+      { "name": "GitHub", "icon": "github" },
+      { "name": "VS Code" },
+      { "name": "Postman" },
+      { "name": "Colab" },
+      { "name": "Canva" },
+      { "name": "Figma" },
+      { "name": "Antigravity" }
+    ]
+  },
+  {
+    "title": "Concepts",
+    "description": "OOP, DSA, REST APIs, Problem Solving",
+    "tags": [
+      { "name": "OOP" },
+      { "name": "DSA" },
+      { "name": "REST APIs" },
+      { "name": "Problem Solving" }
+    ]
+  }
+]
